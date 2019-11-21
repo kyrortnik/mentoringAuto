@@ -69,13 +69,13 @@ public class Main {
                     System.out.println(pl.toString());
                     break;
                 } else {
-                   continue;
 
                 }
             }
 
             System.out.println("Do you want to find a particular plane? \"Type \"Yes\" to continue, \"No\" to Exit from application");
             //some change
+            //some more change
 
 
         }
