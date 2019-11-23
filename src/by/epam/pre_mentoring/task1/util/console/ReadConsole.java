@@ -22,10 +22,10 @@ public class ReadConsole {
         str = sc.nextLine();
         return str;
     }
-    public int readInt(){
-        int ch;
+    public int readInt() {
+        int number;
         Scanner sc = new Scanner(System.in);
-        ch = sc.nextInt();
-        return ch;
+        number = sc.nextInt();
+        return number;
     }
 }

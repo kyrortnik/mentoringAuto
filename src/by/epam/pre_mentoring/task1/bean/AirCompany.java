@@ -1,11 +1,10 @@
 package by.epam.pre_mentoring.task1.bean;
 
 
-import by.epam.pre_mentoring.task1.util.exceptions.NoValueException;
+import by.epam.pre_mentoring.task1.util.exceptions.NotValidDataTypeException;
 
 
 import java.util.ArrayList;
-import java.util.StringJoiner;
 
 
 public class AirCompany {
@@ -55,27 +54,27 @@ public class AirCompany {
 
 
 
-        public ArrayList<Airplane> findPlaneByTonnage(ArrayList<Airplane> airCompany, int tonnage) throws NoValueException {
+        public ArrayList<Airplane> findPlaneByTonnage(ArrayList<Airplane> airCompany, int tonnage) throws NotValidDataTypeException {
         ArrayList<Airplane> list = new ArrayList<>();
         for ( Airplane plane: airCompany){
             if (plane.getTonnage()== tonnage){
                 list.add(plane);
             }
             if (list.isEmpty()){
-                throw new NoValueException("No such records!");
+                throw new NotValidDataTypeException("No such records!");
             }
         }
         return list;
 
     }
-    public ArrayList<Airplane> findPlaneBySeatsNum(ArrayList<Airplane> airCompany, int seats) throws NoValueException {
+    public ArrayList<Airplane> findPlaneBySeatsNum(ArrayList<Airplane> airCompany, int seats) throws NotValidDataTypeException {
         ArrayList<Airplane> list = new ArrayList<>();
         for ( Airplane plane: airCompany){
             if (plane.getSeatsNum()== seats){
                 list.add(plane);
             }
             if (list.isEmpty()){
-                throw new NoValueException("No such records!");
+                throw new NotValidDataTypeException("No such records!");
             }
         }
         return list;
