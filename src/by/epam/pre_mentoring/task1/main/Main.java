@@ -22,7 +22,7 @@ import by.epam.pre_mentoring.task1.util.console.ReadConsole;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.InputMismatchException;
-import java.util.Scanner;
+
 
 
 public class Main {
