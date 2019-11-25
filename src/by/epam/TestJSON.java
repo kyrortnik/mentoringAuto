@@ -1,3 +1,4 @@
+/*
 package by.epam;
 
 
@@ -57,4 +58,4 @@ public class TestJSON
         pw.flush();
         pw.close();
     }
-}
+}*/
