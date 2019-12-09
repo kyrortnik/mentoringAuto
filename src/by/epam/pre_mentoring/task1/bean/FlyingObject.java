@@ -15,6 +15,9 @@ abstract class FlyingObject implements Flying {
      }
 
      FlyingObject(){
+          manMade = false;
+          speed = 0;
+          heightOfFlight = 0;
      }
 
 }

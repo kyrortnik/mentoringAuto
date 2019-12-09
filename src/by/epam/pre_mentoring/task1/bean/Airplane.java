@@ -14,6 +14,7 @@ public class Airplane  extends Aircraft implements Comparable<Airplane>{
 
     public Airplane() {
         super();
+        planeModel = 0;
         seatsNum = 0;
         tonnage = 0;
         flightDistance = 0;
@@ -80,7 +81,7 @@ public class Airplane  extends Aircraft implements Comparable<Airplane>{
 
     @Override
     public int compareTo(Airplane plane) {
-        return (Integer.compare(this.getFlightDistance(), plane.flightDistance));
+        return (Integer.compare(this.getPlaneModel(), plane.planeModel));
     }
 
     @Override

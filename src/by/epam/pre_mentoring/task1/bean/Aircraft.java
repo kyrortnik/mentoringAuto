@@ -18,6 +18,10 @@ public abstract class Aircraft  extends FlyingObject {
 
     public Aircraft() {
         super();
+        producer = null;
+        countryOfOrigin = null;
+        color = null;
+        cost = 0;
 
     }
 }
