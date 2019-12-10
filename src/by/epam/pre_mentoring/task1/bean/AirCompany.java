@@ -85,12 +85,13 @@ public class AirCompany {
 
     }
 
-    public String toString(ArrayList<Airplane> company){
+    public String toString(){
         String str;
         StringBuilder out = new StringBuilder();
         for (Airplane pl : company){
             str = pl.toString();
             out.append(str).append("\n");
+            System.out.println(str);
         }
         return out.toString();
 

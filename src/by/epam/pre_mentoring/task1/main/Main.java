@@ -49,8 +49,7 @@ public class Main {
         System.out.println("Type number of action you would like to perform:");
         System.out.println("==============================================================");
         switch (console.readInt()){
-            case 1:
-                System.out.println(company.toString());
+            case 1: System.out.println(company.toString());
                 break;
             case 2:
                 // method on finding plane
