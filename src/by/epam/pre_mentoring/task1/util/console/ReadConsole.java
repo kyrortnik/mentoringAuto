@@ -13,12 +13,7 @@ public class ReadConsole {
 
             if (str.equals("Yes")){
                 check = true;
-            }else if(str.equals("yes")) {
-             check = true;
-            }
-            else {
-                check = false;
-            }
+            }else check = str.equals("yes");
         return  check;
     }
 

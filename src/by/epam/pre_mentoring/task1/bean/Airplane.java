@@ -11,6 +11,13 @@ public class Airplane  extends Aircraft implements Comparable<Airplane>{
     private int tonnage;
     private int flightDistance;
 
+    public Airplane(int speed, int heightOfFlight, String producer, String countryOfOrigin, String color, int cost, int planeModel, int seatsNum, int tonnage, int flightDistance) {
+        super(speed,heightOfFlight,producer,countryOfOrigin,color,cost);
+        this.planeModel = planeModel;
+        this.seatsNum = seatsNum;
+        this.tonnage = tonnage;
+        this.flightDistance = flightDistance;
+    }
 
     public Airplane() {
         super();
@@ -20,15 +27,7 @@ public class Airplane  extends Aircraft implements Comparable<Airplane>{
         flightDistance = 0;
     }
 
-    public Airplane(int speed, int heightOfFlight, String producer, String countryOfOrigin, String color, int cost, int planeModel, int seatsNum, int tonnage, int flightDistance) {
-        super(speed,heightOfFlight,producer,countryOfOrigin,color,cost);
-        this.planeModel = planeModel;
-        this.seatsNum = seatsNum;
-        this.tonnage = tonnage;
-        this.flightDistance = flightDistance;
 
-
-    }
 
     public int getPlaneModel() {
         return planeModel;

@@ -16,7 +16,13 @@ public class AirCompany {
     }
 
     public AirCompany() {
+        this.company = new ArrayList<>();
+        company.add(new Airplane());
 
+    }
+
+    public void add(Airplane plane){
+        this.company.add(plane);
     }
 
 

@@ -28,19 +28,19 @@ import java.util.InputMismatchException;
 public class Main {
     public static void main(String[] args) throws InputMismatchException {
 
-        ArrayList<Airplane> list = new ArrayList<>();
-        AirCompany company = new AirCompany(list);
+
+        AirCompany company = new AirCompany();
         ReadConsole console = new ReadConsole();
 
         int grossSeat;
         int grossTon;
 
 
-        list.add(new Airplane(750, 10000, "China Inc.", "China", "white", 300000, 730, 300, 500, 20000));
-        list.add(new Airplane(950, 20000, "AirBUS Inc.", "Netherlands", "orange", 400000, 550, 600, 1000, 20000));
-        list.add(new Airplane(1000, 15000, "Plane LLC.", "Belarus", "green", 300000, 440, 250, 700, 12000));
-        list.add(new Airplane(1000, 15000, "Boeing", "USA", "red", 300000, 737, 450, 700, 15000));
-        //list.add(new Airplane());
+        company.add(new Airplane(750, 10000, "China Inc.", "China", "white", 300000, 730, 300, 500, 20000));
+        company.add(new Airplane(950, 20000, "AirBUS Inc.", "Netherlands", "orange", 400000, 550, 600, 1000, 20000));
+        company.add(new Airplane(1000, 15000, "Plane LLC.", "Belarus", "green", 300000, 440, 250, 700, 12000));
+        company.add(new Airplane(1000, 15000, "Boeing", "USA", "red", 300000, 737, 450, 700, 15000));
+
 
 
         System.out.println("Here all planes of the company (sorted by flight distance:)");
