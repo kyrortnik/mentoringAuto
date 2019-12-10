@@ -2,7 +2,7 @@ package by.epam;
 
 import java.sql.*;
 
-public class Test {
+public class TestJDBC {
 
     public static void main(String[]args){
         try{

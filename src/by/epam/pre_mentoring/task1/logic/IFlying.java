@@ -1,6 +1,6 @@
 package by.epam.pre_mentoring.task1.logic;
 
-public interface Flying {
+public interface IFlying {
 
      void takeOff();
      void ascend();
