@@ -1,5 +1,6 @@
 package by.epam.pre_mentoring.task1.util.console;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ReadConsole {
@@ -7,12 +8,12 @@ public class ReadConsole {
     public boolean readCheck(){
         boolean check;
         Scanner sc = new Scanner(System.in);
+        String str;
+        str = sc.nextLine();
 
-            if (sc.next().equals("Yes")){
-                check = true;
-            }else{
-                check = false;
-            }
+        if (str.equals("Yes")){
+            check = true;
+        }else check = str.equals("yes");
         return  check;
     }
 
@@ -22,10 +23,16 @@ public class ReadConsole {
         str = sc.nextLine();
         return str;
     }
-    public int readInt() {
-        int number;
+    public int readInt() throws InputMismatchException {
+        int number = 0;
         Scanner sc = new Scanner(System.in);
-        number = sc.nextInt();
-        return number;
+        try {
+            number = sc.nextInt();
+            return number;
+        }catch (InputMismatchException e){
+
+        }
+        return  number;
+
     }
 }

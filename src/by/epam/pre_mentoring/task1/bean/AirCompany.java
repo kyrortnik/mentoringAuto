@@ -58,7 +58,7 @@ public class AirCompany {
 
 
 
-        public ArrayList<Airplane> findByTonnage(ArrayList<Airplane> company, int tonnage) throws NotValidDataTypeException {
+    public ArrayList<Airplane> findByTonnage(ArrayList<Airplane> company, int tonnage) throws NotValidDataTypeException {
         ArrayList<Airplane> list = new ArrayList<>();
         for ( Airplane pl: company){
             if (pl.getTonnage()== tonnage){
