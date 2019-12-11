@@ -15,8 +15,9 @@ package by.epam.pre_mentoring.task1.main;
  */
 import by.epam.pre_mentoring.task1.bean.AirCompany;
 import by.epam.pre_mentoring.task1.bean.Airplane;
+import by.epam.pre_mentoring.task1.logic.Search;
 import by.epam.pre_mentoring.task1.util.console.ReadConsole;
-
+import by.epam.pre_mentoring.task1.util.exceptions.NotValidDataTypeException;
 
 
 import java.util.ArrayList;
@@ -26,11 +27,14 @@ import java.util.InputMismatchException;
 
 
 public class Main {
-    public static void main(String[] args) throws InputMismatchException {
+    public static void main(String[] args) throws InputMismatchException, NotValidDataTypeException {
 
 
         AirCompany company = new AirCompany();
         ReadConsole console = new ReadConsole();
+
+
+
         company.add(new Airplane(750, 10000, "China Inc.", "China", "white", 300000, 730, 300, 500, 20000));
         company.add(new Airplane(950, 20000, "AirBUS Inc.", "Netherlands", "orange", 400000, 550, 600, 1000, 20000));
         company.add(new Airplane(1000, 15000, "Plane LLC.", "Belarus", "green", 300000, 440, 250, 700, 12000));
@@ -71,7 +75,21 @@ public class Main {
                     System.out.println("Type the number of characteristics you would like to perform:");
                     System.out.println("============================================================== |");
                     // method on finding plane
-                    console.readInt();
+
+                        switch (console.readInt()){
+                            case 1:
+                                System.out.println("Enter model:");
+                                int mdl = console.readInt();
+
+                                try{
+                                    Search.findByModel(company,mdl);
+                                }catch (NullPointerException e){
+                                    System.out.println("null exception");
+                                }
+
+
+
+                        }
 
                     break;
                 case 3:
