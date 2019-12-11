@@ -20,4 +20,27 @@ abstract class FlyingObject implements Flying {
           heightOfFlight = 0;
      }
 
+    public boolean isManMade() {
+        return manMade;
+    }
+
+    public void setManMade(boolean manMade) {
+        this.manMade = manMade;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getHeightOfFlight() {
+        return heightOfFlight;
+    }
+
+    public void setHeightOfFlight(int heightOfFlight) {
+        this.heightOfFlight = heightOfFlight;
+    }
 }

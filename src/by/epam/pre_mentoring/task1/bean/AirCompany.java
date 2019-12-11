@@ -87,7 +87,7 @@ public class AirCompany {
     public ArrayList<Airplane> findByModel(ArrayList<Airplane> company, int model) throws NotValidDataTypeException{
         ArrayList<Airplane> list = new ArrayList<>();
         for ( Airplane pl: company){
-            if (pl.getSeatsNum()== model){
+            if (pl.getPlaneModel()== model){
                 list.add(pl);
             }
             if (list.isEmpty()){
@@ -100,7 +100,7 @@ public class AirCompany {
     public ArrayList<Airplane> findByDistance(ArrayList<Airplane> company, int flightDistance) throws NotValidDataTypeException{
         ArrayList<Airplane> list = new ArrayList<>();
         for ( Airplane pl: company){
-            if (pl.getSeatsNum()== flightDistance){
+            if (pl.getFlightDistance()== flightDistance){
                 list.add(pl);
             }
             if (list.isEmpty()){
@@ -113,7 +113,7 @@ public class AirCompany {
     public ArrayList<Airplane> findByCost(ArrayList<Airplane> company, int cost) throws NotValidDataTypeException{
         ArrayList<Airplane> list = new ArrayList<>();
         for ( Airplane pl: company){
-            if (pl.getSeatsNum()== cost){
+            if (pl.getCost()== cost){
                 list.add(pl);
             }
             if (list.isEmpty()){
@@ -126,7 +126,7 @@ public class AirCompany {
     public ArrayList<Airplane> findBySpeed(ArrayList<Airplane> company, int speed) throws NotValidDataTypeException{
         ArrayList<Airplane> list = new ArrayList<>();
         for ( Airplane pl: company){
-            if (pl.getSeatsNum()== speed){
+            if (pl.getSpeed()== speed){
                 list.add(pl);
             }
             if (list.isEmpty()){
@@ -138,7 +138,7 @@ public class AirCompany {
     public ArrayList<Airplane> findByHeight(ArrayList<Airplane> company, int height) throws NotValidDataTypeException{
         ArrayList<Airplane> list = new ArrayList<>();
         for ( Airplane pl: company){
-            if (pl.getSeatsNum()== height){
+            if (pl.getHeightOfFlight()== height){
                 list.add(pl);
             }
             if (list.isEmpty()){
@@ -148,10 +148,10 @@ public class AirCompany {
         return list;
     }
 
-    public ArrayList<Airplane> findByProducer(ArrayList<Airplane> company, int producer) throws NotValidDataTypeException{ //EDIT!!!!!1
+    public ArrayList<Airplane> findByProducer(ArrayList<Airplane> company, String producer) throws NotValidDataTypeException{
         ArrayList<Airplane> list = new ArrayList<>();
         for ( Airplane pl: company){
-            if (pl.getSeatsNum()== producer){
+            if (pl.getProducer().equals(producer)){
                 list.add(pl);
             }
             if (list.isEmpty()){
@@ -160,10 +160,10 @@ public class AirCompany {
         }
         return list;
     }
-    public ArrayList<Airplane> findByCountry(ArrayList<Airplane> company, int country) throws NotValidDataTypeException{ //EDIT!!!!!1
+    public ArrayList<Airplane> findByCountry(ArrayList<Airplane> company, String country) throws NotValidDataTypeException{
         ArrayList<Airplane> list = new ArrayList<>();
         for ( Airplane pl: company){
-            if (pl.getSeatsNum()== country){
+            if (pl.getCountryOfOrigin().equals(country)){
                 list.add(pl);
             }
             if (list.isEmpty()){
@@ -173,10 +173,10 @@ public class AirCompany {
         return list;
     }
 
-    public ArrayList<Airplane> findByColor(ArrayList<Airplane> company, int color) throws NotValidDataTypeException{ //EDIT!!!!!1
+    public ArrayList<Airplane> findByColor(ArrayList<Airplane> company, String color) throws NotValidDataTypeException{ //EDIT!!!!!1
         ArrayList<Airplane> list = new ArrayList<>();
         for ( Airplane pl: company){
-            if (pl.getSeatsNum()== color){
+            if (pl.getColor().equals(color)){
                 list.add(pl);
             }
             if (list.isEmpty()){
