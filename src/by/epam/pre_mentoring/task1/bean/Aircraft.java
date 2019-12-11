@@ -24,4 +24,36 @@ public abstract class Aircraft  extends FlyingObject {
         cost = 0;
 
     }
+
+    public String getProducer() {
+        return producer;
+    }
+
+    public void setProducer(String producer) {
+        this.producer = producer;
+    }
+
+    public String getCountryOfOrigin() {
+        return countryOfOrigin;
+    }
+
+    public void setCountryOfOrigin(String countryOfOrigin) {
+        this.countryOfOrigin = countryOfOrigin;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
 }

@@ -15,8 +15,9 @@ package by.epam.pre_mentoring.task1.main;
  */
 import by.epam.pre_mentoring.task1.bean.AirCompany;
 import by.epam.pre_mentoring.task1.bean.Airplane;
+import by.epam.pre_mentoring.task1.logic.Search;
 import by.epam.pre_mentoring.task1.util.console.ReadConsole;
-
+import by.epam.pre_mentoring.task1.util.exceptions.NotValidDataTypeException;
 
 
 import java.util.ArrayList;
@@ -26,11 +27,14 @@ import java.util.InputMismatchException;
 
 
 public class Main {
-    public static void main(String[] args) throws InputMismatchException {
+    public static void main(String[] args) throws InputMismatchException, NotValidDataTypeException {
 
 
         AirCompany company = new AirCompany();
         ReadConsole console = new ReadConsole();
+
+
+
         company.add(new Airplane(750, 10000, "China Inc.", "China", "white", 300000, 730, 300, 500, 20000));
         company.add(new Airplane(950, 20000, "AirBUS Inc.", "Netherlands", "orange", 400000, 550, 600, 1000, 20000));
         company.add(new Airplane(1000, 15000, "Plane LLC.", "Belarus", "green", 300000, 440, 250, 700, 12000));
@@ -41,54 +45,65 @@ public class Main {
 
         int grossSeat;
         int grossTon;
-        System.out.println("                    Hello and Welcome!");
-        System.out.println("============================================================== |");
-        System.out.println("What actions would you like to perform?");
-        System.out.println("1.View All Airplanes in database.");
-        System.out.println("2.Find a particular Airplane.");
-        System.out.println("3.Add an Airplane");
-        System.out.println("4.Remove airplane form DB.");
-        System.out.println("============================================================== |");
-        System.out.println("Type number of the action you would like to perform:");
-        System.out.println("============================================================== |");
-        switch (console.readInt()){
-            case 1: System.out.println(company.toString());
-                break;
-            case 2:
-                System.out.println("Type by which characteristics you would like to search for plane:");
-                System.out.println("1. Plane Model");
-                System.out.println("2.Number of seats");
-                System.out.println("3.Tonnage");
-                System.out.println("4.Flight Distance");
-                System.out.println("5.Producer");
-                System.out.println("6.Country of origin");
-                System.out.println("7.Color");
-                System.out.println("8.Cost");
-                System.out.println("9.Speed");
-                System.out.println("10. Height of Flight");
-                System.out.println("============================================================== |");
-                System.out.println("Type the number of characteristics you would like to perform:");
-                System.out.println("============================================================== |");
-                // method on finding plane
-                console.readInt();
+            System.out.println("                    Hello and Welcome!");
+            System.out.println("============================================================== |");
+            System.out.println("What actions would you like to perform?");
+            System.out.println("1.View All Airplanes in database.");
+            System.out.println("2.Find a particular Airplane.");
+            System.out.println("3.Add an Airplane");
+            System.out.println("4.Remove airplane form DB.");
+            System.out.println("============================================================== |");
+            System.out.println("Type number of the action you would like to perform:");
+            System.out.println("============================================================== |");
+            switch (console.readInt()) {
+                case 1:
+                    System.out.println(company.toString());
+                    break;
+                case 2:
+                    System.out.println("Type by which characteristics you would like to search for plane:");
+                    System.out.println("1. Plane Model");
+                    System.out.println("2.Number of seats");
+                    System.out.println("3.Tonnage");
+                    System.out.println("4.Flight Distance");
+                    System.out.println("5.Producer");
+                    System.out.println("6.Country of origin");
+                    System.out.println("7.Color");
+                    System.out.println("8.Cost");
+                    System.out.println("9.Speed");
+                    System.out.println("10. Height of Flight");
+                    System.out.println("============================================================== |");
+                    System.out.println("Type the number of characteristics you would like to perform:");
+                    System.out.println("============================================================== |");
+                    // method on finding plane
 
-                break;
-            case 3:
-                // method on adding a plane
-                break;
-            case 4:
-                // method on removing a plane
-                break;
-            default:
-                System.out.println("no such action. please re-enter action number.");
-        }
+                        switch (console.readInt()){
+                            case 1:
+                                System.out.println("Enter model:");
+                                int mdl = console.readInt();
 
-
+                                try{
+                                    Search.findByModel(company,mdl);
+                                }catch (NullPointerException e){
+                                    System.out.println("null exception");
+                                }
 
 
 
+                        }
 
-        //System.out.println("Here all planes of the company (sorted by flight distance:)");
+                    break;
+                case 3:
+                    // method on adding a plane
+                    break;
+                case 4:
+                    // method on removing a plane
+                    break;
+                default:
+                    System.out.println("no such action. please re-enter action number.");
+            }
+
+
+            //System.out.println("Here all planes of the company (sorted by flight distance:)");
 
 
 
@@ -103,7 +118,7 @@ public class Main {
         System.out.println("Gross tonnage of all planes is: : " + grossTon);*/
 
 
-        /*System.out.println("Do you want to find a particular plane? \nType \"Yes\" to continue, \"No\" to Exit from application:");*/
+            /*System.out.println("Do you want to find a particular plane? \nType \"Yes\" to continue, \"No\" to Exit from application:");*/
 
 
         while (console.readCheck()) {
