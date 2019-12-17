@@ -36,12 +36,12 @@ public class MultiplyMatrix {
         }
 
         System.out.println("Matrix 3: ");
-        int sum;
+        int mult;
 
         for (int i = 0;i<matrix3.length;i++){
             for (int j = 0;j<matrix3.length;j++){
-                sum = matrix1[i][j] * matrix2[i][j];
-                matrix3[i][j] = sum;
+                mult = matrix1[i][j] * matrix2[i][j];
+                matrix3[i][j] = mult;
                 System.out.print(matrix3[i][j] + " ");
             }
             System.out.println();
