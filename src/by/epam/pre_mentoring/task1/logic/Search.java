@@ -72,6 +72,7 @@ public abstract class Search {
     public static void  findByHeight(ArrayList<Airplane> company, int height) {
 
         for ( Airplane pl: company){
+            System.out.println(pl.toString());
             if (pl.getHeightOfFlight()== height){
                 System.out.println(pl.toString());
             }
@@ -88,7 +89,7 @@ public abstract class Search {
         }
 
     }
-    public static void findByCountry(ArrayList<Airplane> company, String country) throws NotValidDataTypeException{
+    public static void findByCountry(ArrayList<Airplane> company, String country) {
 
         for ( Airplane pl: company){
             if (pl.getCountryOfOrigin().equals(country)){

@@ -124,6 +124,7 @@ public class Main {
                             case 5:
                                 System.out.println("Enter number of producer:");
                                 String prd = console.readString();
+                                System.out.println("string from toConsole = " + prd);
 
                                 try {
                                     Search.findByProducer(company.getCompany(),prd);
@@ -177,7 +178,7 @@ public class Main {
                                 break;
 
                             case 10:
-                                System.out.println("Enter number of height:");
+                                System.out.println("Enter height:");
                                 int high = console.readInt();
 
                                 try {
