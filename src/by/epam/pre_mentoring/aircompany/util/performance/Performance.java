@@ -1,8 +1,8 @@
-package by.epam.pre_mentoring.task1.util.performance;
+package by.epam.pre_mentoring.aircompany.util.performance;
 
 
-import by.epam.pre_mentoring.task1.bean.AirCompany;
-import by.epam.pre_mentoring.task1.bean.Airplane;
+import by.epam.pre_mentoring.aircompany.bean.AirCompany;
+import by.epam.pre_mentoring.aircompany.bean.Airplane;
 
 public class Performance {
     AirCompany company = new AirCompany();

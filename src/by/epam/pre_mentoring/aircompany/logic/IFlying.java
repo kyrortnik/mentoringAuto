@@ -1,4 +1,4 @@
-package by.epam.pre_mentoring.task1.logic;
+package by.epam.pre_mentoring.aircompany.logic;
 
 public interface IFlying {
 

@@ -1,4 +1,4 @@
-package by.epam.pre_mentoring.task1.main;
+package by.epam.pre_mentoring.aircompany.main;
 
 /**
  * Спроектировать объектную модель для заданной предметной области. Использовать (продемонстрировать умение работать):
@@ -13,11 +13,11 @@ package by.epam.pre_mentoring.task1.main;
  * Провести сортировку самолетов компании по дальности полета.
  * Найти самолет в компании, соответствующий заданному диапазону параметров.
  */
-import by.epam.pre_mentoring.task1.bean.AirCompany;
-import by.epam.pre_mentoring.task1.bean.Airplane;
-import by.epam.pre_mentoring.task1.logic.Search;
-import by.epam.pre_mentoring.task1.util.console.ReadConsole;
-import by.epam.pre_mentoring.task1.util.exceptions.NotValidDataTypeException;
+import by.epam.pre_mentoring.aircompany.bean.AirCompany;
+import by.epam.pre_mentoring.aircompany.bean.Airplane;
+import by.epam.pre_mentoring.aircompany.logic.Search;
+import by.epam.pre_mentoring.aircompany.util.console.ReadConsole;
+import by.epam.pre_mentoring.aircompany.util.exceptions.NotValidDataTypeException;
 
 
 import java.util.ArrayList;

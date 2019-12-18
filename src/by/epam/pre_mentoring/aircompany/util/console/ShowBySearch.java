@@ -1,4 +1,4 @@
-package by.epam.pre_mentoring.task1.util.console;
+package by.epam.pre_mentoring.aircompany.util.console;
 
 public class ShowBySearch {
     /////////////////////////////////////////

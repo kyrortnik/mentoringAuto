@@ -1,6 +1,4 @@
-package by.epam.pre_mentoring.task1.util.work_withDB;
-
-import java.sql.*;
+package by.epam.pre_mentoring.aircompany.util.work_withDB;
 
 public class DBconnection {
     /*Connection connection = DriverManager.getConnection() {

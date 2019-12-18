@@ -1,4 +1,4 @@
-package by.epam.pre_mentoring.task1.bean;
+package by.epam.pre_mentoring.aircompany.bean;
 
 public abstract class Aircraft  extends FlyingObject {
 

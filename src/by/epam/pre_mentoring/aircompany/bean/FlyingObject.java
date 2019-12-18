@@ -1,6 +1,6 @@
-package by.epam.pre_mentoring.task1.bean;
+package by.epam.pre_mentoring.aircompany.bean;
 
-import by.epam.pre_mentoring.task1.logic.IFlying;
+import by.epam.pre_mentoring.aircompany.logic.IFlying;
 
 abstract class FlyingObject implements IFlying {
 

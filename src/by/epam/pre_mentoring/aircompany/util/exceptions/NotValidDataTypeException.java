@@ -1,4 +1,4 @@
-package by.epam.pre_mentoring.task1.util.exceptions;
+package by.epam.pre_mentoring.aircompany.util.exceptions;
 
 public class NotValidDataTypeException extends Exception {
 

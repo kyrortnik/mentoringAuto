@@ -1,8 +1,8 @@
-package by.epam.pre_mentoring.task1.logic;
+package by.epam.pre_mentoring.aircompany.logic;
 
 
-import by.epam.pre_mentoring.task1.bean.Airplane;
-import by.epam.pre_mentoring.task1.util.exceptions.NotValidDataTypeException;
+import by.epam.pre_mentoring.aircompany.bean.Airplane;
+import by.epam.pre_mentoring.aircompany.util.exceptions.NotValidDataTypeException;
 
 
 import java.util.ArrayList;

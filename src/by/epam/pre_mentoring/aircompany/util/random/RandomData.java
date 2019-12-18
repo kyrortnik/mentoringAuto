@@ -1,7 +1,7 @@
-package by.epam.pre_mentoring.task1.util.random;
+package by.epam.pre_mentoring.aircompany.util.random;
 
 
-import by.epam.pre_mentoring.task1.bean.Airplane;
+import by.epam.pre_mentoring.aircompany.bean.Airplane;
 
 import java.util.ArrayList;
 

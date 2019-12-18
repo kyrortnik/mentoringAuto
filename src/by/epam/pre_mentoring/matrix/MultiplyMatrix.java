@@ -1,5 +1,5 @@
 
-package by.epam.pre_mentoring;
+package by.epam.pre_mentoring.matrix;
 
 
 /**
