@@ -1,6 +1,6 @@
 # Default ignored files
 /workspace.xml
-/production
+/out
 /integration.iml
 /.idea
 /.class
