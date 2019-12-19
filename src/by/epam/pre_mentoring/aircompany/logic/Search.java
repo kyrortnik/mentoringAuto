@@ -5,6 +5,7 @@ import by.epam.pre_mentoring.aircompany.bean.Airplane;
 import by.epam.pre_mentoring.aircompany.util.exceptions.NotValidDataTypeException;
 
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public abstract class Search {
@@ -14,7 +15,7 @@ public abstract class Search {
         for ( Airplane pl: company){
             if (pl.getTonnage()== tonnage){
                 System.out.println(pl.toString());
-            }
+            }else
 
         }
 
@@ -30,10 +31,9 @@ public abstract class Search {
 
     }
 
-    public static void findByModel(ArrayList<Airplane> company, int model) throws NotValidDataTypeException{
+    public static Arr findByModel(ArrayList<Airplane> company, int model) throws NotValidDataTypeException{
 
         for ( Airplane pl: company){
-            //System.out.println("all = " + pl.toString());
             if (pl.getPlaneModel() == model){
                 System.out.println(pl.toString());
             }
@@ -42,73 +42,101 @@ public abstract class Search {
 
     }
 
-    public static void findByDistance(ArrayList<Airplane> company, int flightDistance) {
+    public static ArrayList<Airplane> findByDistance(ArrayList<Airplane> company, int flightDistance) {
+        ArrayList<Airplane> list = new ArrayList<>();
 
         for ( Airplane pl: company) {
             if (pl.getFlightDistance() == flightDistance) {
-                System.out.println(pl.toString());
+                list.add(pl);
+            }else {
+                throw new NullPointerException("no such distance");
             }
         }
+        return list;
     }
 
-    public static void findByCost(ArrayList<Airplane> company, int cost) {
+    public static ArrayList<Airplane> findByCost(ArrayList<Airplane> company, int cost) {
+        ArrayList<Airplane> list = new ArrayList<>();
 
         for ( Airplane pl: company){
             if (pl.getCost()== cost){
-               System.out.println(pl.toString());
+               list.add(pl);
+            }else {
+                throw new NullPointerException(" no such cost.");
             }
         }
+        return list;
 
     }
 
-    public static void findBySpeed(ArrayList<Airplane> company, int speed) {
+    public static ArrayList<Airplane> findBySpeed(ArrayList<Airplane> company, int speed) {
+        ArrayList<Airplane> list = new ArrayList<>();
 
         for ( Airplane pl: company) {
             if (pl.getSpeed() == speed) {
-                System.out.println(pl.toString());
+               list.add(pl);
+            }else {
+                throw new NullPointerException("no such speed.");
             }
         }
+        return list;
 
     }
-    public static void  findByHeight(ArrayList<Airplane> company, int height) {
+    public static ArrayList<Airplane>  findByHeight(ArrayList<Airplane> company, int height) {
+        ArrayList<Airplane> list = new ArrayList<>();
 
         for ( Airplane pl: company){
             if (pl.getHeightOfFlight()== height){
-                System.out.println(pl.toString());
+                list.add(pl);
+            }else{
+                throw new NullPointerException("no such company.");
             }
         }
+        return  list;
 
     }
 
-    public static void findByProducer(ArrayList<Airplane> company, String producer) {
+    public static ArrayList<Airplane> findByProducer(ArrayList<Airplane> company, String producer) {
+        ArrayList<Airplane> list = new ArrayList<>();
 
         for ( Airplane pl: company){
             if (producer.equals(pl.getProducer())){
-                System.out.println(pl.toString());
+                list.add(pl);
+            }else{
+                throw new NullPointerException("no such producer.");
             }
+
         }
+        return list;
 
     }
-    public static void findByCountry(ArrayList<Airplane> company, String country) {
+    public static ArrayList<Airplane> findByCountry(ArrayList<Airplane> company, String country) {
+        ArrayList<Airplane> list = new ArrayList<>();
 
         for ( Airplane pl: company){
             if (country.equals(pl.getCountryOfOrigin())){
-                System.out.println(pl.toString());
+                list.add(pl);
+            }else {
+                throw new NullPointerException("no such country.");
             }
 
         }
+        return list;
 
     }
 
-    public static void findByColor(ArrayList<Airplane> company, String color) {
+    public static ArrayList<Airplane> findByColor(ArrayList<Airplane> company, String color) {
+        ArrayList<Airplane> list = new ArrayList<>();
 
-        for ( Airplane pl: company){
-            if (color.equals(pl.getColor())){
-                System.out.println(pl.toString());
+
+            for (Airplane pl: company){
+                if (color.equals(pl.getColor())){
+                    list.add(pl);
+                }else {
+                    throw new NullPointerException("no such value");
+                }
             }
-
-        }
-
+        return list;
     }
 
 

@@ -84,7 +84,7 @@ public class Main {
                                 try{
                                     Search.findByModel(company.getCompany(),mdl);
                                 }catch (NullPointerException e){
-                                    System.out.println("null exception");
+                                    System.out.println("No such record.");
                                 }
                                 break;
 
@@ -137,7 +137,7 @@ public class Main {
                                 String country = console.readString();
 
                                 try {
-                                    Search.findByCountry(company.getCompany(),country);
+                                    System.out.println(Search.findByCountry(company.getCompany(),country));
                                 }catch (NullPointerException e){
                                     System.out.println("null exception");
                                 }
@@ -148,9 +148,9 @@ public class Main {
                                 String clr = console.readString();
 
                                 try {
-                                    Search.findByColor(company.getCompany(),clr);
+                                    System.out.println(Search.findByColor(company.getCompany(),clr));
                                 }catch (NullPointerException e){
-                                    System.out.println("null exception");
+                                    System.out.println("no such value color");
                                 }
                                 break;
 
@@ -188,10 +188,6 @@ public class Main {
                                 }
                                 break;
 
-
-
-
-
                         }
 
                     break;
@@ -204,6 +200,7 @@ public class Main {
                 default:
                     System.out.println("no such action. please re-enter action number.");
             }
+            System.out.println("after switch");
 
 
             //System.out.println("Here all planes of the company (sorted by flight distance:)");
