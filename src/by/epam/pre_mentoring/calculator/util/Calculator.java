@@ -11,18 +11,15 @@ package by.epam.pre_mentoring.calculator.util;
 public class Calculator {
 
     public int sum(int x, int y){
-        int sum = x +y;
-        return sum;
+        return x +y;
     }
 
     public int diff(int x, int y){
-        int diff = x - y;
-        return diff;
+        return x - y;
     }
 
     public int multiply(int x,int y){
-        int mul = x * y;
-        return mul;
+        return x * y;
     }
     public double divide(int x,int y){
         double div;
