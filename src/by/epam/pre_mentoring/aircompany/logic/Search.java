@@ -33,6 +33,7 @@ public abstract class Search {
     public static void findByModel(ArrayList<Airplane> company, int model) throws NotValidDataTypeException{
 
         for ( Airplane pl: company){
+            //System.out.println("all = " + pl.toString());
             if (pl.getPlaneModel() == model){
                 System.out.println(pl.toString());
             }
@@ -72,7 +73,6 @@ public abstract class Search {
     public static void  findByHeight(ArrayList<Airplane> company, int height) {
 
         for ( Airplane pl: company){
-            System.out.println(pl.toString());
             if (pl.getHeightOfFlight()== height){
                 System.out.println(pl.toString());
             }
@@ -83,7 +83,7 @@ public abstract class Search {
     public static void findByProducer(ArrayList<Airplane> company, String producer) {
 
         for ( Airplane pl: company){
-            if (pl.getProducer().equals(producer)){
+            if (producer.equals(pl.getProducer())){
                 System.out.println(pl.toString());
             }
         }
@@ -92,7 +92,7 @@ public abstract class Search {
     public static void findByCountry(ArrayList<Airplane> company, String country) {
 
         for ( Airplane pl: company){
-            if (pl.getCountryOfOrigin().equals(country)){
+            if (country.equals(pl.getCountryOfOrigin())){
                 System.out.println(pl.toString());
             }
 
@@ -103,13 +103,14 @@ public abstract class Search {
     public static void findByColor(ArrayList<Airplane> company, String color) {
 
         for ( Airplane pl: company){
-            if (pl.getColor().equals(color)){
+            if (color.equals(pl.getColor())){
                 System.out.println(pl.toString());
             }
 
         }
 
     }
+
 
 
 }

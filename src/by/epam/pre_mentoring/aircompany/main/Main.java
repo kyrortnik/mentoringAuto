@@ -20,7 +20,7 @@ import by.epam.pre_mentoring.aircompany.util.console.ReadConsole;
 import by.epam.pre_mentoring.aircompany.util.exceptions.NotValidDataTypeException;
 
 
-import java.util.ArrayList;
+
 import java.util.Collections;
 import java.util.InputMismatchException;
 
@@ -124,7 +124,7 @@ public class Main {
                             case 5:
                                 System.out.println("Enter number of producer:");
                                 String prd = console.readString();
-                                System.out.println("string from toConsole = " + prd);
+
 
                                 try {
                                     Search.findByProducer(company.getCompany(),prd);
@@ -223,6 +223,7 @@ public class Main {
 
             /*System.out.println("Do you want to find a particular plane? \nType \"Yes\" to continue, \"No\" to Exit from application:");*/
 
+/*
 
         while (console.readCheck()) {
             getModel(company.getCompany());
@@ -235,10 +236,11 @@ public class Main {
 
 
         }
+*/
 
 
     }
-    public static void getModel(ArrayList<Airplane> company)  {
+    /*public static void getModel(ArrayList<Airplane> company)  {
         ReadConsole console = new ReadConsole();
         int number;
         int count = 0;
@@ -257,7 +259,7 @@ public class Main {
 
         }
     }
-
+*/
 
 }
 

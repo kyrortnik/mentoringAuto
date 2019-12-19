@@ -60,8 +60,7 @@ public class AirCompany {
         for (Airplane pl : company){
             str = pl.toString();
             out.append(str).append("\n");
-            System.out.println(str);
-        }
+                    }
         return out.toString();
 
     }
