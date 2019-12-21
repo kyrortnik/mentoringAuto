@@ -7,17 +7,17 @@ public class DBconnection {
         try{
 
             //1.Connection
-            Connection connection = DriverManager.getConnection("jdbc:postgres://localhost:5432/javaDB","postgres","4815162342");
+            Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "4815162342");
 
             //2.Statement
             Statement statement = connection.createStatement();
 
             //3.Execute query
-            ResultSet resultSet = statement.executeQuery("select * from ");
+            ResultSet resultSet = statement.executeQuery("select * from airplanes");
 
             //4.Process result
             while(resultSet.next()){
-                System.out.println((resultSet.getString("column_name")+ "," + resultSet.getString("column_name")));
+                System.out.println((resultSet.getString("plane_model")+ "," + resultSet.getString("plane_tonnage")));
             }
 
         }catch (Exception e){
