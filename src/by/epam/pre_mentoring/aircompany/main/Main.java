@@ -137,7 +137,7 @@ public class Main {
                                 String country = console.readString();
 
                                 try {
-                                    System.out.println(Search.findByCountry(company.getCompany(),country));
+                                   Search.findByCountry(company.getCompany(),country);
                                 }catch (NullPointerException e){
                                     System.out.println("null exception");
                                 }
@@ -148,7 +148,7 @@ public class Main {
                                 String clr = console.readString();
 
                                 try {
-                                    System.out.println(Search.findByColor(company.getCompany(),clr));
+                                    Search.findByColor(company.getCompany(),clr);
                                 }catch (NullPointerException e){
                                     System.out.println("no such value color");
                                 }
