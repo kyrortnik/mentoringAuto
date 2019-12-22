@@ -21,7 +21,12 @@ public class DBconnection {
             ResultSet resultSet = statement.executeQuery("select * from airplanes");
 
             while(resultSet.next()){
-                System.out.println(resultSet.getString("plane_model")+ ", "+ resultSet.getString("plane_tonnage")+ ", "+ resultSet.getString("plane_speed")+ ", "+ resultSet.getString("plane_country"));
+                //System.out.println( + ":" + ":" + ":");
+                String column1 = "Model: \b ";
+                String column2 = " ,Tonnage: \b ";
+                String column3 = " ,Speed: \b ";
+                String column4 = " ,Country: \b ";
+                System.out.print(column1+ resultSet.getString("plane_model")+ column2 + resultSet.getString("plane_tonnage")+ column3 + resultSet.getString("plane_speed")+ column4+ resultSet.getString("plane_country") +"\n");
             }
 
         }catch (SQLException e){

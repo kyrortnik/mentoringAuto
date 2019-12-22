@@ -101,16 +101,5 @@ public abstract class Search {
 
     }
 
-    public static void findByColor(ArrayList<Airplane> company, String color) {
-
-        for (Airplane pl : company) {
-            if (color.equals(pl.getColor())) {
-                System.out.println(pl.toString());
-            }
-
-        }
-
-
-    }
 
     }

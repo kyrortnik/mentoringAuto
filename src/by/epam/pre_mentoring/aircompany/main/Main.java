@@ -18,7 +18,7 @@ import by.epam.pre_mentoring.aircompany.bean.Airplane;
 import by.epam.pre_mentoring.aircompany.logic.Search;
 import by.epam.pre_mentoring.aircompany.util.console.ReadConsole;
 import by.epam.pre_mentoring.aircompany.util.exceptions.NotValidDataTypeException;
-
+import by.epam.pre_mentoring.aircompany.util.work_withDB.DBconnection;
 
 
 import java.util.Collections;
@@ -57,7 +57,9 @@ public class Main {
             System.out.println("============================================================== |");
             switch (console.readInt()) {
                 case 1:
-                    System.out.println(company.toString());
+                    DBconnection dBconnection = new DBconnection();
+                    dBconnection.showAllDB();
+                    //System.out.println(company.toString());
                     break;
                 case 2:
                     System.out.println("Type by which characteristics you would like to search for plane:");
