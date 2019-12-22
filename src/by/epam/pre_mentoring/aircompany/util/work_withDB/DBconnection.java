@@ -49,7 +49,7 @@ public class DBconnection {
         try{
             Connection connection = DriverManager.getConnection(url,user,password);
             Statement statement = connection.createStatement();
-            statement.executeQuery("DELETE FROM airplanes WHERE"+ column +"=" + value);
+            statement.executeUpdate("DELETE FROM airplanes WHERE " + column + " = " + value);
             System.out.println("Value has been removed");
         }catch (SQLException e){
             e.printStackTrace();

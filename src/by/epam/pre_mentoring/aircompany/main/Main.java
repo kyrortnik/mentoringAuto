@@ -187,6 +187,115 @@ public class Main {
                     break;
                 case 4:
                     // method on removing a plane
+                    System.out.println("Type the number of characteristics of plane you would like to remove :");
+                    System.out.println("============================================================== |");
+
+
+                    switch (console.readInt()){
+                        case 1:
+                            System.out.println("Enter model:");
+                            int mdl = console.readInt();
+                            String str = Integer.toString(mdl);
+
+                            try{
+                                DBconnection dB1= new DBconnection();
+                                dB1.remoteFromDB(str,"plane_model");
+                            }catch (NullPointerException e){
+                                System.out.println("No such record.");
+                            }
+                            break;
+
+                        case 2:
+                            System.out.println("Enter number of seats:");
+                            int seats = console.readInt();
+
+                            try {
+                                Search.findBySeatsNum(company.getCompany(),seats);
+                            }catch (NullPointerException e){
+                                System.out.println("null exception");
+                            }
+                            break;
+
+                        case 3:
+                            System.out.println("Enter number of tonnage:");
+                            int ton = console.readInt();
+
+                            try {
+                                Search.findByTonnage(company.getCompany(),ton);
+                            }catch (NullPointerException e){
+                                System.out.println("null exception");
+                            }
+                            break;
+
+                        case 4:
+                            System.out.println("Enter number of distance:");
+                            int dis = console.readInt();
+
+                            try {
+                                Search.findByDistance(company.getCompany(),dis);
+                            }catch (NullPointerException e){
+                                System.out.println("null exception");
+                            }
+                            break;
+
+                        case 5:
+                            System.out.println("Enter number of producer:");
+                            String prd = console.readString();
+
+
+                            try {
+                                Search.findByProducer(company.getCompany(),prd);
+                            }catch (NullPointerException e){
+                                System.out.println("null exception");
+                            }
+                            break;
+                        case 6:
+                            System.out.println("Enter number of country:");
+                            String country = console.readString();
+
+                            try {
+                                Search.findByCountry(company.getCompany(),country);
+                            }catch (NullPointerException e){
+                                System.out.println("null exception");
+                            }
+                            break;
+
+
+                        case 7:
+                            System.out.println("Enter number of cost:");
+                            int cost = console.readInt();
+
+                            try {
+                                Search.findByCost(company.getCompany(),cost);
+                            }catch (NullPointerException e){
+                                System.out.println("null exception");
+                            }
+                            break;
+
+
+                        case 8:
+                            System.out.println("Enter number of speed:");
+                            int spd = console.readInt();
+
+                            try {
+                                Search.findBySpeed(company.getCompany(),spd);
+                            }catch (NullPointerException e){
+                                System.out.println("null exception");
+                            }
+                            break;
+
+                        case 9:
+                            System.out.println("Enter height:");
+                            int high = console.readInt();
+
+                            try {
+                                Search.findByHeight(company.getCompany(),high);
+                            }catch (NullPointerException e){
+                                System.out.println("null exception");
+                            }
+                            break;
+
+                    }
                     break;
                 default:
                     System.out.println("no such action. please re-enter action number.");
