@@ -22,10 +22,13 @@ public class DBconnection {
 
             while(resultSet.next()){
                 String column1 = "Model: \b ";
-                String column2 = " Tonnage: \b ";
-                String column3 = " Speed: \b ";
-                String column4 = " Country: \b ";
-                System.out.print(column1+ resultSet.getString("plane_model")+ column2 + resultSet.getString("plane_tonnage")+ column3 + resultSet.getString("plane_speed")+ column4+ resultSet.getString("plane_country") +"\n");
+                String column2 = ", Tonnage: \b ";
+                String column3 = ", Country: \b ";
+                String column4 = ", Seats number: \b ";
+                String column5 = ", Producer: \b ";
+                String column6 = ", Height of flight: \b ";
+                String column7 = ", Distance: \b ";
+                System.out.print(column1+ resultSet.getString("plane_model")+ column2 + resultSet.getString("plane_tonnage")+ column3 + resultSet.getString("plane_country")+ column4+ resultSet.getString("seats_num") + column5 + resultSet.getString("producer")+ column6 + resultSet.getString("flying_height")+ column7 + resultSet.getString("plane_distance")+ "\n");
             }
 
         }catch (SQLException e){
