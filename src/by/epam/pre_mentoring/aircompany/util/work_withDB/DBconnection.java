@@ -21,11 +21,10 @@ public class DBconnection {
             ResultSet resultSet = statement.executeQuery("select * from airplanes");
 
             while(resultSet.next()){
-                //System.out.println( + ":" + ":" + ":");
                 String column1 = "Model: \b ";
-                String column2 = " ,Tonnage: \b ";
-                String column3 = " ,Speed: \b ";
-                String column4 = " ,Country: \b ";
+                String column2 = " Tonnage: \b ";
+                String column3 = " Speed: \b ";
+                String column4 = " Country: \b ";
                 System.out.print(column1+ resultSet.getString("plane_model")+ column2 + resultSet.getString("plane_tonnage")+ column3 + resultSet.getString("plane_speed")+ column4+ resultSet.getString("plane_country") +"\n");
             }
 
@@ -33,12 +32,12 @@ public class DBconnection {
             e.printStackTrace();
         }
     }
-    public void addToDB(ArrayList<Airplane> company){
+    public void addToDB(Airplane plane){
         try{
             Connection connection = DriverManager.getConnection(url,user,password);
             Statement statement = connection.createStatement();
-            statement.executeQuery("INSERT INTO airplanes VALUES (12,432,42345,346)");
-            System.out.println("Value has been added to DataBase");
+            statement.executeUpdate("INSERT INTO airplanes VALUES(" + plane.getPlaneModel() + ", "+ plane.getTonnage()  +", "+  "'" + plane.getCountryOfOrigin() + "'"  +  ", "+ plane.getSeatsNum() + ", " + "'"+ plane.getProducer()+ "'"+   ", " + plane.getHeightOfFlight() + ", "+  plane.getFlightDistance()+")");
+            System.out.println("Values has been added to DataBase");
 
         } catch (SQLException e) {
             e.printStackTrace();

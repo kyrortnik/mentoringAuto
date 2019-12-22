@@ -5,7 +5,7 @@ import by.epam.pre_mentoring.aircompany.bean.Airplane;
 import by.epam.pre_mentoring.aircompany.util.exceptions.NotValidDataTypeException;
 
 
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
 
 public abstract class Search {
@@ -52,25 +52,7 @@ public abstract class Search {
         }
     }
 
-    public static void findByCost(ArrayList<Airplane> company, int cost) {
 
-        for ( Airplane pl: company){
-            if (pl.getCost()== cost){
-                System.out.println(pl.toString());
-            }
-        }
-
-    }
-
-    public static void findBySpeed(ArrayList<Airplane> company, int speed) {
-
-        for ( Airplane pl: company) {
-            if (pl.getSpeed() == speed) {
-                System.out.println(pl.toString());
-            }
-        }
-
-    }
     public static void  findByHeight(ArrayList<Airplane> company, int height) {
 
         for ( Airplane pl: company){

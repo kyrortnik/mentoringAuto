@@ -35,10 +35,10 @@ public class Main {
 
 
 
-        company.add(new Airplane(750, 10000, "China Inc.", "China", "white", 300000, 730, 300, 500, 20000));
-        company.add(new Airplane(950, 20000, "AirBUS Inc.", "Netherlands", "orange", 400000, 550, 600, 1000, 20000));
-        company.add(new Airplane(1000, 15000, "Plane LLC.", "Belarus", "green", 300000, 440, 250, 700, 12000));
-        company.add(new Airplane(1000, 15000, "Boeing", "USA", "red", 300000, 737, 450, 700, 15000));
+        company.add(new Airplane(10000, "China Inc.", "China", 737, 300, 500, 20000));
+        company.add(new Airplane(20000, "AirBUS Inc.", "Netherlands", 550, 600, 1000, 20000));
+        company.add(new Airplane(15000, "Plane LLC.", "Belarus",  440, 250, 700, 12000));
+        company.add(new Airplane(15000, "Boeing", "USA", 737, 450, 700, 15000));
 
         Collections.sort(company.getCompany());
 
@@ -69,9 +69,7 @@ public class Main {
                     System.out.println("4.Flight Distance");
                     System.out.println("5.Producer");
                     System.out.println("6.Country of origin");
-                    System.out.println("7.Cost");
-                    System.out.println("8.Speed");
-                    System.out.println("9. Height of Flight");
+                    System.out.println("7. Height of Flight");
                     System.out.println("============================================================== |");
                     System.out.println("Type the number of characteristics you would like to perform:");
                     System.out.println("============================================================== |");
@@ -144,31 +142,7 @@ public class Main {
                                 }
                                 break;
 
-
                             case 7:
-                                System.out.println("Enter number of cost:");
-                                int cost = console.readInt();
-
-                                try {
-                                    Search.findByCost(company.getCompany(),cost);
-                                }catch (NullPointerException e){
-                                    System.out.println("null exception");
-                                }
-                                break;
-
-
-                            case 8:
-                                System.out.println("Enter number of speed:");
-                                int spd = console.readInt();
-
-                                try {
-                                    Search.findBySpeed(company.getCompany(),spd);
-                                }catch (NullPointerException e){
-                                    System.out.println("null exception");
-                                }
-                                break;
-
-                            case 9:
                                 System.out.println("Enter height:");
                                 int high = console.readInt();
 
@@ -178,15 +152,56 @@ public class Main {
                                     System.out.println("null exception");
                                 }
                                 break;
-
                         }
 
                     break;
                 case 3:
-                    // method on adding a plane
+                    Airplane plane = new Airplane();
+
+                    System.out.println("Type plane model:");
+                    int mdl = console.readInt();
+                    plane.setPlaneModel(mdl);
+
+                    System.out.println("Type plane tonnage:");
+                    int tonnage = console.readInt();
+                    plane.setTonnage(tonnage);
+
+                    System.out.println("Type plane country:");
+                    String country = console.readString();
+                    plane.setProducer(country);
+
+                    System.out.println("Type number of seats:");
+                    int sets = console.readInt();
+                    plane.setSeatsNum(sets);
+
+                    System.out.println("Type plane producer:");
+                    String producer = console.readString();
+                    plane.setProducer(producer);
+
+                    System.out.println("Type plane height of flight:");
+                    int height = console.readInt();
+                    plane.setTonnage(height);
+
+                    System.out.println("Type plane flight distance:");
+                    int distance = console.readInt();
+                    plane.setTonnage(distance);
+
+                    DBconnection dbconnection = new DBconnection();
+                    dbconnection.addToDB(plane);
+
+
                     break;
                 case 4:
                     // method on removing a plane
+                    System.out.println("Type by which characteristics you would like to search for plane:");
+                    System.out.println("1. Plane Model");
+                    System.out.println("2.Number of seats");
+                    System.out.println("3.Tonnage");
+                    System.out.println("4.Flight Distance");
+                    System.out.println("5.Producer");
+                    System.out.println("6.Country of origin");
+                    System.out.println("7. Height of Flight");
+                    System.out.println("============================================================== |");
                     System.out.println("Type the number of characteristics of plane you would like to remove :");
                     System.out.println("============================================================== |");
 
@@ -194,8 +209,8 @@ public class Main {
                     switch (console.readInt()){
                         case 1:
                             System.out.println("Enter model:");
-                            int mdl = console.readInt();
-                            String str = Integer.toString(mdl);
+                            int model = console.readInt();
+                            String str = Integer.toString(model);
 
                             try{
                                 DBconnection dB1= new DBconnection();
@@ -251,40 +266,16 @@ public class Main {
                             break;
                         case 6:
                             System.out.println("Enter number of country:");
-                            String country = console.readString();
+                            String cnt = console.readString();
 
                             try {
-                                Search.findByCountry(company.getCompany(),country);
+                                Search.findByCountry(company.getCompany(),cnt);
                             }catch (NullPointerException e){
                                 System.out.println("null exception");
                             }
                             break;
-
 
                         case 7:
-                            System.out.println("Enter number of cost:");
-                            int cost = console.readInt();
-
-                            try {
-                                Search.findByCost(company.getCompany(),cost);
-                            }catch (NullPointerException e){
-                                System.out.println("null exception");
-                            }
-                            break;
-
-
-                        case 8:
-                            System.out.println("Enter number of speed:");
-                            int spd = console.readInt();
-
-                            try {
-                                Search.findBySpeed(company.getCompany(),spd);
-                            }catch (NullPointerException e){
-                                System.out.println("null exception");
-                            }
-                            break;
-
-                        case 9:
                             System.out.println("Enter height:");
                             int high = console.readInt();
 
