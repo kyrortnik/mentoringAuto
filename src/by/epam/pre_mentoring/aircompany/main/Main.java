@@ -67,10 +67,9 @@ public class Main {
                     System.out.println("4.Flight Distance");
                     System.out.println("5.Producer");
                     System.out.println("6.Country of origin");
-                    System.out.println("7.Color");
-                    System.out.println("8.Cost");
-                    System.out.println("9.Speed");
-                    System.out.println("10. Height of Flight");
+                    System.out.println("7.Cost");
+                    System.out.println("8.Speed");
+                    System.out.println("9. Height of Flight");
                     System.out.println("============================================================== |");
                     System.out.println("Type the number of characteristics you would like to perform:");
                     System.out.println("============================================================== |");
@@ -143,18 +142,8 @@ public class Main {
                                 }
                                 break;
 
+
                             case 7:
-                                System.out.println("Enter number of color:");
-                                String clr = console.readString();
-
-                                try {
-                                    Search.findByColor(company.getCompany(),clr);
-                                }catch (NullPointerException e){
-                                    System.out.println("no such value color");
-                                }
-                                break;
-
-                            case 8:
                                 System.out.println("Enter number of cost:");
                                 int cost = console.readInt();
 
@@ -166,7 +155,7 @@ public class Main {
                                 break;
 
 
-                            case 9:
+                            case 8:
                                 System.out.println("Enter number of speed:");
                                 int spd = console.readInt();
 
@@ -177,7 +166,7 @@ public class Main {
                                 }
                                 break;
 
-                            case 10:
+                            case 9:
                                 System.out.println("Enter height:");
                                 int high = console.readInt();
 

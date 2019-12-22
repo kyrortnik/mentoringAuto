@@ -4,7 +4,6 @@ public abstract class Aircraft  extends FlyingObject {
 
     String producer;
     String countryOfOrigin;
-    String color;
     int cost; // US Dollars
 
 
@@ -12,7 +11,6 @@ public abstract class Aircraft  extends FlyingObject {
         super(true,speed,heightOfFlight);
         this.producer = producer;
         this.countryOfOrigin = countryOfOrigin;
-        this.color = color;
         this.cost = cost;
     }
 
@@ -20,7 +18,6 @@ public abstract class Aircraft  extends FlyingObject {
         super();
         producer = null;
         countryOfOrigin = null;
-        color = null;
         cost = 0;
 
     }
@@ -41,13 +38,6 @@ public abstract class Aircraft  extends FlyingObject {
         this.countryOfOrigin = countryOfOrigin;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
 
     public int getCost() {
         return cost;

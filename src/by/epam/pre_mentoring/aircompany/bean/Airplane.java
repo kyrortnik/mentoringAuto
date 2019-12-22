@@ -92,7 +92,6 @@ public class Airplane  extends Aircraft implements Comparable<Airplane>{
                 ", Flight Distance = " + flightDistance +
                 ", Producer = " + producer + '\'' +
                 ", Country off Origin = " + countryOfOrigin + '\'' +
-                ", Color = " + color + '\'' +
                 ", Cost (US Dollars)= " + cost +
                 ", Speed = " + speed +
                 ", Height of Flight = " + heightOfFlight ;
