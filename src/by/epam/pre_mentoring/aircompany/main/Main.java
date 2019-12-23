@@ -168,7 +168,7 @@ public class Main {
 
                     System.out.println("Type plane country:");
                     String country = console.readString();
-                    plane.setProducer(country);
+                    plane.setCountryOfOrigin(country);
 
                     System.out.println("Type number of seats:");
                     int sets = console.readInt();
@@ -180,11 +180,11 @@ public class Main {
 
                     System.out.println("Type plane height of flight:");
                     int height = console.readInt();
-                    plane.setTonnage(height);
+                    plane.setHeightOfFlight(height);
 
                     System.out.println("Type plane flight distance:");
                     int distance = console.readInt();
-                    plane.setTonnage(distance);
+                    plane.setFlightDistance(distance);
 
                     DBconnection dbconnection = new DBconnection();
                     dbconnection.addToDB(plane);

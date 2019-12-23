@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class DBconnection {
     final String url = "jdbc:postgresql://localhost:5432/postgres";
     final String user = "postgres";
-    final String password = "4815162342";
+    final String password = "admin";
 
     public void showAllDB(){
         try{

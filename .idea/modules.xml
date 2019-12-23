@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/integration.iml" filepath="$PROJECT_DIR$/integration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/automationMentoring.iml" filepath="$PROJECT_DIR$/automationMentoring.iml" />
     </modules>
   </component>
 </project>
