@@ -18,16 +18,18 @@ import by.epam.pre_mentoring.aircompany.bean.Airplane;
 import by.epam.pre_mentoring.aircompany.logic.Search;
 import by.epam.pre_mentoring.aircompany.util.console.ReadConsole;
 import by.epam.pre_mentoring.aircompany.util.exceptions.NotValidDataTypeException;
+import by.epam.pre_mentoring.aircompany.util.i_oStreams.InOutStreams;
 import by.epam.pre_mentoring.aircompany.util.work_withDB.DBconnection;
 
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
 public class Main {
-    public static void main(String[] args) throws InputMismatchException, NotValidDataTypeException {
+    public static void main(String[] args) throws InputMismatchException, NotValidDataTypeException, IOException {
 
 
         AirCompany company = new AirCompany();
@@ -304,6 +306,10 @@ public class Main {
                     check = false;
                 }
             }while (check);
+
+            System.out.println("Check of IO");
+        InOutStreams strm = new InOutStreams();
+        strm.streams();
 
 
 
