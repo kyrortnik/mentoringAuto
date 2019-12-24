@@ -86,10 +86,8 @@ public class Main {
 
                         break;
                     case 3:
-
                         WorkWithArray work1 = new WorkWithArray();
-                        work1.addPlane(console.readInt(),company);
-
+                        work1.addPlane(company);
 
                         break;
                     case 4:

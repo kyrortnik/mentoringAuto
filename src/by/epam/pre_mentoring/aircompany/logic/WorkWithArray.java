@@ -7,7 +7,7 @@ import by.epam.pre_mentoring.aircompany.util.exceptions.NotValidDataTypeExceptio
 import by.epam.pre_mentoring.aircompany.util.work_withDB.DBconnection;
 
 public class WorkWithArray {
-    ReadConsole console = new ReadConsole();
+    private ReadConsole console = new ReadConsole();
     public void findPlane(int number, AirCompany company){
 
         switch (number) {
@@ -90,7 +90,7 @@ public class WorkWithArray {
         }
     }
 
-    public void addPlane(int number,AirCompany company){
+    public void addPlane(AirCompany company){
 
         Airplane plane = new Airplane();
 
@@ -121,6 +121,7 @@ public class WorkWithArray {
         System.out.println("Type plane flight distance:");
         int distance = console.readInt();
         plane.setFlightDistance(distance);
+        company.add(plane);
 
         DBconnection dbconnection = new DBconnection();
         dbconnection.addToDB(plane);
