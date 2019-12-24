@@ -8,9 +8,13 @@ import by.epam.pre_mentoring.aircompany.util.work_withDB.DBconnection;
 
 import java.util.Iterator;
 
-public class WorkWithArray {
-    private ReadConsole console = new ReadConsole();
-    public void findPlane(int number, AirCompany company){
+public abstract class WorkWithArray {
+
+
+    private static ReadConsole console = new ReadConsole();
+
+
+    public static void findPlane(int number, AirCompany company){
 
         switch (number) {
             case 1:
@@ -92,7 +96,7 @@ public class WorkWithArray {
         }
     }
 
-    public void addPlane(AirCompany company){
+    public static void addPlane(AirCompany company){
 
         Airplane plane = new Airplane();
 
@@ -131,7 +135,7 @@ public class WorkWithArray {
     }
 
 
-    public void deletePlane(AirCompany company){
+    public static void deletePlane(AirCompany company){
         System.out.println("Type by which characteristics you would like to search for plane:");
         System.out.println("1. Plane Model");
         System.out.println("2.Number of seats");

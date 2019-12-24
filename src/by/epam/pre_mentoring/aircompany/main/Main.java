@@ -25,6 +25,7 @@ import by.epam.pre_mentoring.aircompany.util.work_withDB.DBconnection;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.InputMismatchException;
 
 
@@ -44,7 +45,7 @@ public class Main {
         company.add(new Airplane(15000, "Plane LLC.", "Belarus",  440, 250, 700, 12000));
         company.add(new Airplane(15000, "Boeing", "USA", 737, 450, 700, 15000));
 
-        Collections.sort(company.getCompany());
+
 
 
         int grossSeat;
@@ -65,6 +66,15 @@ public class Main {
                     case 1:
                        /* DBconnection dBconnection = new DBconnection();
                         dBconnection.showAllDB();*/
+
+                        Comparator<Airplane> airplaneComparator = new Comparator<Airplane>() {
+                            @Override
+                            public int compare(Airplane a1, Airplane a2) {
+                                return (int) (a1.getFlightDistance() - a2.getFlightDistance());
+                            }
+                        };
+
+                        company.getCompany().sort(airplaneComparator);
                         System.out.println(company.toString());
                         break;
                     case 2:
@@ -79,21 +89,16 @@ public class Main {
                         System.out.println("============================================================== |");
                         System.out.println("Type the number of characteristics you would like to perform:");
                         System.out.println("============================================================== |");
-                        // method on finding plane
 
-                        WorkWithArray work = new WorkWithArray();
-                        work.findPlane(console.readInt(),company);
+                        WorkWithArray.findPlane(console.readInt(),company);
 
                         break;
                     case 3:
-                        WorkWithArray work1 = new WorkWithArray();
-                        work1.addPlane(company);
+                        WorkWithArray.addPlane(company);
 
                         break;
                     case 4:
-                        // method on removing a plane
-                        WorkWithArray work2 = new WorkWithArray();
-                        work2.deletePlane(company);
+                        WorkWithArray.deletePlane(company);
 
                         break;
                     default:
@@ -102,12 +107,9 @@ public class Main {
                 System.out.println("would you like to perform another action? Type Yes to do so:");
                 String s = console.readString();
 
-                check = s.equals("Yes") || s.equals("yes");
+                check = s.equalsIgnoreCase("yes");
             }while (check);
 
-            System.out.println("Check of IO");
-        InOutStreams strm = new InOutStreams();
-        strm.streams();
 
 
 
