@@ -5,17 +5,8 @@ import java.util.Scanner;
 
 public class ReadConsole {
 
-    public boolean readCheck(){
-        boolean check;
-        Scanner sc = new Scanner(System.in);
-        String str;
-        str = sc.nextLine();
 
-        if (str.equals("Yes")){
-            check = true;
-        }else check = str.equals("yes");
-        return  check;
-    }
+
 
     public String readString(){
         String str;
@@ -25,8 +16,8 @@ public class ReadConsole {
     }
     public int readInt() throws InputMismatchException {
         int number = 0;
-        Scanner sc = new Scanner(System.in);
         try {
+            Scanner sc = new Scanner(System.in);
             number = sc.nextInt();
             return number;
         }catch (InputMismatchException e){
