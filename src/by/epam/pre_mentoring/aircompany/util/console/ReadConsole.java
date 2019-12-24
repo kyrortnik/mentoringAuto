@@ -30,7 +30,6 @@ public class ReadConsole {
             number = sc.nextInt();
             return number;
         }catch (InputMismatchException e){
-
         }
         return  number;
 
