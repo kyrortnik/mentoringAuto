@@ -6,12 +6,29 @@ import by.epam.pre_mentoring.aircompany.util.console.ReadConsole;
 import by.epam.pre_mentoring.aircompany.util.exceptions.NotValidDataTypeException;
 import by.epam.pre_mentoring.aircompany.util.work_withDB.DBconnection;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 
 public abstract class WorkWithArray {
 
-
     private static ReadConsole console = new ReadConsole();
+
+    public static void showAllPlanes(AirCompany company){
+         /* DBconnection dBconnection = new DBconnection();
+                        dBconnection.showAllDB();*/
+
+        Comparator<Airplane> airplaneComparator = new Comparator<Airplane>() {
+            @Override
+            public int compare(Airplane a1, Airplane a2) {
+                return (int) (a1.getFlightDistance() - a2.getFlightDistance());
+            }
+        };
+
+        company.getCompany().sort(airplaneComparator);
+        System.out.println(company.toString());
+
+    }
 
 
     public static void findPlane(int number, AirCompany company){
@@ -151,9 +168,9 @@ public abstract class WorkWithArray {
 
         switch (console.readInt()) {
             case 1:
+
                 System.out.println("Enter model:");
                 int model = console.readInt();
-
 
                 try {
 
@@ -236,4 +253,28 @@ public abstract class WorkWithArray {
         }
 
     }
+
+    public  static void grossSeatNum(AirCompany company){
+        int gross = 0;
+        for (int i = 0;i<company.getCompany().size();i++){
+            Airplane pl = company.getCompany().get(i);
+            int seat = pl.getSeatsNum();
+            gross = gross + seat;
+        }
+
+        System.out.println("Gross seats number: " + gross + " seats");
+    }
+
+
+    public static void  grossTonnage(AirCompany company){
+        int gross = 0;
+        for (int i = 0;i<company.getCompany().size();i++){
+            Airplane pl = company.getCompany().get(i);
+            int tonnage = pl.getTonnage();
+            gross = gross + tonnage;
+        }
+        System.out.println("Gross seats tonnage: " + gross + " tonnage");
+    }
+
+
 }

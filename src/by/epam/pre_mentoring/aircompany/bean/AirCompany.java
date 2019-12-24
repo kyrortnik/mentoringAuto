@@ -29,29 +29,6 @@ public class AirCompany {
 
 
 
-    public  int grossSeatNum(ArrayList<Airplane> airCompany){
-        int gross = 0;
-        for (int i = 0;i<airCompany.size();i++){
-            Airplane pl = airCompany.get(i);
-            int seat = pl.getSeatsNum();
-            gross = gross + seat;
-        }
-
-        return gross;
-    }
-
-
-    public int grossTonnage(ArrayList<Airplane> airCompany){
-        int gross = 0;
-        for (int i = 0;i<airCompany.size();i++){
-            Airplane pl = airCompany.get(i);
-            int tonnage = pl.getTonnage();
-            gross = gross + tonnage;
-        }
-        return  gross;
-    }
-
-
     public String toString(){
         String str;
         StringBuilder out = new StringBuilder();

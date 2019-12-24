@@ -46,10 +46,6 @@ public class Main {
         company.add(new Airplane(15000, "Boeing", "USA", 737, 450, 700, 15000));
 
 
-
-
-        int grossSeat;
-        int grossTon;
             System.out.println("                    Hello and Welcome!");
 
             do {
@@ -59,25 +55,20 @@ public class Main {
                 System.out.println("2.Find a particular Airplane.");
                 System.out.println("3.Add an Airplane");
                 System.out.println("4.Remove airplane form DB.");
+                System.out.println("5.Show gross seats number:");
+                System.out.println("6.Show gross tonnage:");
                 System.out.println("============================================================== |");
                 System.out.println("Type number of the action you would like to perform:");
                 System.out.println("============================================================== |");
+
                 switch (console.readInt()) {
                     case 1:
-                       /* DBconnection dBconnection = new DBconnection();
-                        dBconnection.showAllDB();*/
 
-                        Comparator<Airplane> airplaneComparator = new Comparator<Airplane>() {
-                            @Override
-                            public int compare(Airplane a1, Airplane a2) {
-                                return (int) (a1.getFlightDistance() - a2.getFlightDistance());
-                            }
-                        };
-
-                        company.getCompany().sort(airplaneComparator);
-                        System.out.println(company.toString());
+                        WorkWithArray.showAllPlanes(company);
                         break;
+
                     case 2:
+
                         System.out.println("Type by which characteristics you would like to search for plane:");
                         System.out.println("1. Plane Model");
                         System.out.println("2.Number of seats");
@@ -87,18 +78,31 @@ public class Main {
                         System.out.println("6.Country of origin");
                         System.out.println("7. Height of Flight");
                         System.out.println("============================================================== |");
+                        System.out.println();
                         System.out.println("Type the number of characteristics you would like to perform:");
                         System.out.println("============================================================== |");
 
                         WorkWithArray.findPlane(console.readInt(),company);
-
                         break;
+
                     case 3:
+
                         WorkWithArray.addPlane(company);
 
                         break;
                     case 4:
+
                         WorkWithArray.deletePlane(company);
+
+                        break;
+                    case 5:
+
+                        WorkWithArray.grossSeatNum(company);
+
+                        break;
+                    case 6:
+
+                        WorkWithArray.grossTonnage(company);
 
                         break;
                     default:
@@ -110,63 +114,8 @@ public class Main {
                 check = s.equalsIgnoreCase("yes");
             }while (check);
 
-
-
-
-            //System.out.println("Here all planes of the company (sorted by flight distance:)");
-
-
-
-        /*for (Airplane pl : company.getCompany()) {
-            System.out.println(pl.toString());
-        }*/
-
-        /*grossSeat = company.grossSeatNum(company.getCompany());
-        System.out.println("Gross Seats number on all planes is: " + grossSeat);
-
-        grossTon = company.grossTonnage(company.getCompany());
-        System.out.println("Gross tonnage of all planes is: : " + grossTon);*/
-
-
-            /*System.out.println("Do you want to find a particular plane? \nType \"Yes\" to continue, \"No\" to Exit from application:");*/
-
-/*
-
-        while (console.readCheck()) {
-            getModel(company.getCompany());
-
-
-
-            System.out.println("Do you want to find a particular plane? \"Type \"Yes\" to continue, \"No\" to Exit from application:");
-            //some change
-            //some more change
-
-
-        }
-*/
-
-
     }
-    /*public static void getModel(ArrayList<Airplane> company)  {
-        ReadConsole console = new ReadConsole();
-        int number;
-        int count = 0;
 
-        System.out.println("Enter model number:");
-        number = console.readInt();
-
-        for (Airplane pl : company) {
-            if (pl.getPlaneModel() == number) {
-                System.out.println(pl.toString());
-                count++;
-            }
-        }
-        if (count == 0){
-            System.out.println("No such model.Try again.");
-
-        }
-    }
-*/
 
 }
 
