@@ -25,7 +25,7 @@ import by.epam.pre_mentoring.aircompany.util.work_withDB.DBconnection;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.InputMismatchException;
-import java.util.Scanner;
+
 
 
 public class Main {
@@ -34,7 +34,7 @@ public class Main {
 
         AirCompany company = new AirCompany();
         ReadConsole console = new ReadConsole();
-        boolean check = false;
+        boolean check;
 
 
 
@@ -52,7 +52,6 @@ public class Main {
             System.out.println("============================================================== |");
             do {
 
-
                 System.out.println("What actions would you like to perform?");
                 System.out.println("1.View All Airplanes in database.");
                 System.out.println("2.Find a particular Airplane.");
@@ -63,9 +62,9 @@ public class Main {
                 System.out.println("============================================================== |");
                 switch (console.readInt()) {
                     case 1:
-                        DBconnection dBconnection = new DBconnection();
-                        dBconnection.showAllDB();
-                        //System.out.println(company.toString());
+                       /* DBconnection dBconnection = new DBconnection();
+                        dBconnection.showAllDB();*/
+                        System.out.println(company.toString());
                         break;
                     case 2:
                         System.out.println("Type by which characteristics you would like to search for plane:");
@@ -300,11 +299,7 @@ public class Main {
                 System.out.println("would you like to perform another action? Type Yes to do so:");
                 String s = console.readString();
 
-                if(s.equals("Yes")|| s.equals("yes")){
-                    check = true;
-                }else {
-                    check = false;
-                }
+                check = s.equals("Yes") || s.equals("yes");
             }while (check);
 
             System.out.println("Check of IO");

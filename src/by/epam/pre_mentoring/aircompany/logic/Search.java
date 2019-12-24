@@ -34,7 +34,6 @@ public abstract class Search {
     public static void findByModel(ArrayList<Airplane> company, int model) throws NotValidDataTypeException{
 
         for ( Airplane pl: company){
-            //System.out.println("all = " + pl.toString());
             if (pl.getPlaneModel() == model){
                 System.out.println(pl.toString());
             }
