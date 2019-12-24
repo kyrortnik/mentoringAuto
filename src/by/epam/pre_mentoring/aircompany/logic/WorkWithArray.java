@@ -6,6 +6,8 @@ import by.epam.pre_mentoring.aircompany.util.console.ReadConsole;
 import by.epam.pre_mentoring.aircompany.util.exceptions.NotValidDataTypeException;
 import by.epam.pre_mentoring.aircompany.util.work_withDB.DBconnection;
 
+import java.util.Iterator;
+
 public class WorkWithArray {
     private ReadConsole console = new ReadConsole();
     public void findPlane(int number, AirCompany company){
@@ -122,8 +124,112 @@ public class WorkWithArray {
         int distance = console.readInt();
         plane.setFlightDistance(distance);
         company.add(plane);
+        System.out.println("Plane is added.");
 
         DBconnection dbconnection = new DBconnection();
         dbconnection.addToDB(plane);
+    }
+
+
+    public void deletePlane(AirCompany company){
+        System.out.println("Type by which characteristics you would like to search for plane:");
+        System.out.println("1. Plane Model");
+        System.out.println("2.Number of seats");
+        System.out.println("3.Tonnage");
+        System.out.println("4.Flight Distance");
+        System.out.println("5.Producer");
+        System.out.println("6.Country of origin");
+        System.out.println("7. Height of Flight");
+        System.out.println("============================================================== |");
+        System.out.println("Type the number of characteristics of plane you would like to remove :");
+        System.out.println("============================================================== |");
+
+
+        switch (console.readInt()) {
+            case 1:
+                System.out.println("Enter model:");
+                int model = console.readInt();
+
+
+                try {
+
+                    company.getCompany().removeIf(pl -> model == pl.getPlaneModel());
+
+                    /*DBconnection dB1 = new DBconnection();
+                    dB1.remoteFromDB(str, "plane_model");*/
+
+                } catch (NullPointerException e) {
+                    System.out.println("No such record.");
+                }
+                break;
+
+            case 2:
+                System.out.println("Enter number of seats:");
+                int seats = console.readInt();
+
+                try {
+                    Search.findBySeatsNum(company.getCompany(), seats);
+                } catch (NullPointerException e) {
+                    System.out.println("null exception");
+                }
+                break;
+
+            case 3:
+                System.out.println("Enter number of tonnage:");
+                int ton = console.readInt();
+
+                try {
+                    Search.findByTonnage(company.getCompany(), ton);
+                } catch (NullPointerException e) {
+                    System.out.println("null exception");
+                }
+                break;
+
+            case 4:
+                System.out.println("Enter number of distance:");
+                int dis = console.readInt();
+
+                try {
+                    Search.findByDistance(company.getCompany(), dis);
+                } catch (NullPointerException e) {
+                    System.out.println("null exception");
+                }
+                break;
+
+            case 5:
+                System.out.println("Enter number of producer:");
+                String prd = console.readString();
+
+
+                try {
+                    Search.findByProducer(company.getCompany(), prd);
+                } catch (NullPointerException e) {
+                    System.out.println("null exception");
+                }
+                break;
+            case 6:
+                System.out.println("Enter number of country:");
+                String cnt = console.readString();
+
+                try {
+                    Search.findByCountry(company.getCompany(), cnt);
+                } catch (NullPointerException e) {
+                    System.out.println("null exception");
+                }
+                break;
+
+            case 7:
+                System.out.println("Enter height:");
+                int high = console.readInt();
+
+                try {
+                    Search.findByHeight(company.getCompany(), high);
+                } catch (NullPointerException e) {
+                    System.out.println("null exception");
+                }
+                break;
+
+        }
+
     }
 }
