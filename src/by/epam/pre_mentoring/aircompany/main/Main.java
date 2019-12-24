@@ -53,10 +53,10 @@ public class Main {
                 System.out.println("What actions would you like to perform?");
                 System.out.println("1.View All Airplanes in database.");
                 System.out.println("2.Find a particular Airplane.");
-                System.out.println("3.Add an Airplane");
+                System.out.println("3.Add an Airplane.");
                 System.out.println("4.Remove airplane form DB.");
-                System.out.println("5.Show gross seats number:");
-                System.out.println("6.Show gross tonnage:");
+                System.out.println("5.Show gross seats number.");
+                System.out.println("6.Show gross tonnage.");
                 System.out.println("============================================================== |");
                 System.out.println("Type number of the action you would like to perform:");
                 System.out.println("============================================================== |");

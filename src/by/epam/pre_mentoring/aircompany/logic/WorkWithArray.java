@@ -3,6 +3,7 @@ package by.epam.pre_mentoring.aircompany.logic;
 import by.epam.pre_mentoring.aircompany.bean.AirCompany;
 import by.epam.pre_mentoring.aircompany.bean.Airplane;
 import by.epam.pre_mentoring.aircompany.util.console.ReadConsole;
+import by.epam.pre_mentoring.aircompany.util.exceptions.NoValueException;
 import by.epam.pre_mentoring.aircompany.util.exceptions.NotValidDataTypeException;
 import by.epam.pre_mentoring.aircompany.util.work_withDB.DBconnection;
 
@@ -15,13 +16,11 @@ public abstract class WorkWithArray {
     private static ReadConsole console = new ReadConsole();
 
     public static void showAllPlanes(AirCompany company){
-         /* DBconnection dBconnection = new DBconnection();
-                        dBconnection.showAllDB();*/
 
-        Comparator<Airplane> airplaneComparator = new Comparator<Airplane>() {
+        Comparator<Airplane> airplaneComparator = new Comparator<>() {
             @Override
             public int compare(Airplane a1, Airplane a2) {
-                return (int) (a1.getFlightDistance() - a2.getFlightDistance());
+                return (a1.getFlightDistance() - a2.getFlightDistance());
             }
         };
 
@@ -40,7 +39,7 @@ public abstract class WorkWithArray {
 
                 try {
                     Search.findByModel(company.getCompany(), mdl);
-                } catch (NullPointerException | NotValidDataTypeException e) {
+                } catch (NullPointerException | NoValueException e) {
                     System.out.println("No such record.");
                 }
                 break;
@@ -153,7 +152,7 @@ public abstract class WorkWithArray {
 
 
     public static void deletePlane(AirCompany company){
-        System.out.println("Type by which characteristics you would like to search for plane:");
+        System.out.println("Type by which characteristics you would like to search for plane to remove:");
         System.out.println("1. Plane Model");
         System.out.println("2.Number of seats");
         System.out.println("3.Tonnage");
@@ -161,8 +160,6 @@ public abstract class WorkWithArray {
         System.out.println("5.Producer");
         System.out.println("6.Country of origin");
         System.out.println("7. Height of Flight");
-        System.out.println("============================================================== |");
-        System.out.println("Type the number of characteristics of plane you would like to remove :");
         System.out.println("============================================================== |");
 
 
@@ -175,6 +172,7 @@ public abstract class WorkWithArray {
                 try {
 
                     company.getCompany().removeIf(pl -> model == pl.getPlaneModel());
+                    System.out.println("Plane has been removed");
 
                     /*DBconnection dB1 = new DBconnection();
                     dB1.remoteFromDB(str, "plane_model");*/

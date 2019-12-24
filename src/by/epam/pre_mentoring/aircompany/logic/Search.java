@@ -2,6 +2,7 @@ package by.epam.pre_mentoring.aircompany.logic;
 
 
 import by.epam.pre_mentoring.aircompany.bean.Airplane;
+import by.epam.pre_mentoring.aircompany.util.exceptions.NoValueException;
 import by.epam.pre_mentoring.aircompany.util.exceptions.NotValidDataTypeException;
 
 
@@ -31,14 +32,21 @@ public abstract class Search {
 
     }
 
-    public static void findByModel(ArrayList<Airplane> company, int model) throws NotValidDataTypeException{
+    public static void findByModel(ArrayList<Airplane> company, int model) throws  NoValueException {
 
-        for ( Airplane pl: company){
-            if (pl.getPlaneModel() == model){
-                System.out.println(pl.toString());
+
+            for ( Airplane pl: company){
+                if (pl.getPlaneModel() == model){
+                    System.out.println(pl.toString());
+                }else {
+                    throw new NoValueException("no value");
+                }
+
+
             }
 
-        }
+
+
 
     }
 
