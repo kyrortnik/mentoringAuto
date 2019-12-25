@@ -1,13 +1,13 @@
 package by.epam.pre_mentoring.aircompany.util.work_withDB;
 
 
-import by.epam.pre_mentoring.aircompany.bean.Airplane;
+import by.epam.pre_mentoring.aircompany.logic.IExternalSources;
 import org.json.simple.JSONObject;
 
 import java.sql.*;
-import java.util.ArrayList;
 
-public class DBconnection {
+
+public class DBconnection  implements IExternalSources {
     final String url = "jdbc:postgresql://localhost:5432/postgres";
     final String user = "postgres";
     final String password = "4815162342";
@@ -59,7 +59,7 @@ public class DBconnection {
             System.out.println("Incorrect input values");
         }
     }
-    public void remoteFromDB(String value,String column){
+    public void removeFromDB(String value, String column){
         try{
             Connection connection = DriverManager.getConnection(url,user,password);
             Statement statement = connection.createStatement();

@@ -25,8 +25,11 @@ public abstract class WorkWithArray {
             }
         };
 
-        company.getCompany().sort(airplaneComparator);
-        System.out.println(company.toString());
+            company.getCompany().sort(airplaneComparator);
+            if (company.getCompany().isEmpty()){
+                System.out.println("No airplane records yet.");
+            }
+            System.out.println(company.toString());
 
     }
 

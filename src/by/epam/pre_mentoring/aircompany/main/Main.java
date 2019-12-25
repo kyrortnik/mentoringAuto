@@ -46,7 +46,7 @@ public class Main {
             do {
                 System.out.println("============================================================== |");
                 System.out.println("What actions would you like to perform?");
-                System.out.println("1.View All Airplanes in database.");
+                System.out.println("1.View All Airplanes.");
                 System.out.println("2.Find a particular Airplane.");
                 System.out.println("3.Add an Airplane.");
                 System.out.println("4.Remove airplane form DB.");

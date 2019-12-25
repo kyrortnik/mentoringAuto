@@ -1,17 +1,12 @@
 package by.epam.pre_mentoring.aircompany.util.json;
 
 
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 import by.epam.pre_mentoring.aircompany.bean.Airplane;
+import by.epam.pre_mentoring.aircompany.logic.IExternalSources;
 import org.json.simple.JSONObject;
 
-public class ToJSON {
+public class ToJSON  implements IExternalSources {
 
     public JSONObject writeToJSON(Airplane plane){
         JSONObject obj = new JSONObject();
