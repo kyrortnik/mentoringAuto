@@ -34,14 +34,14 @@ public class Main {
 
         AirCompany company = new AirCompany();
         ReadConsole console = new ReadConsole();
-        boolean check = false;
+        boolean check;
 
 
 
-        company.add(new Airplane(10000, "China Inc.", "China", 737, 300, 500, 20000));
+        /*company.add(new Airplane(10000, "China Inc.", "China", 737, 300, 500, 20000));
         company.add(new Airplane(20000, "AirBUS Inc.", "Netherlands", 550, 600, 1000, 20000));
         company.add(new Airplane(15000, "Plane LLC.", "Belarus",  440, 250, 700, 12000));
-        company.add(new Airplane(15000, "Boeing", "USA", 737, 450, 700, 15000));
+        company.add(new Airplane(15000, "Boeing", "USA", 737, 450, 700, 15000));*/
 
         Collections.sort(company.getCompany());
 
@@ -63,9 +63,9 @@ public class Main {
                 System.out.println("============================================================== |");
                 switch (console.readInt()) {
                     case 1:
-                        DBconnection dBconnection = new DBconnection();
-                        dBconnection.showAllDB();
-                        //System.out.println(company.toString());
+                        /*DBconnection dBconnection = new DBconnection();
+                        dBconnection.showAllDB();*/
+                        System.out.println(company.toString());
                         break;
                     case 2:
                         System.out.println("Type by which characteristics you would like to search for plane:");
@@ -191,6 +191,9 @@ public class Main {
                         System.out.println("Type plane flight distance:");
                         int distance = console.readInt();
                         plane.setFlightDistance(distance);
+
+                        company.add(plane);
+                        System.out.println("Airplane is added.");
 
                         DBconnection dbconnection = new DBconnection();
                         dbconnection.addToDB(plane);

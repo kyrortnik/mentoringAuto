@@ -11,8 +11,8 @@ public class InOutStreams {
 
     public void streams() throws IOException{
         try {
-            in = new FileReader("src\\by\\epam\\pre_mentoring\\aircompany\\IOStreamsFiles\\input_file.txt");
-            out = new FileWriter("src\\by\\epam\\pre_mentoring\\aircompany\\IOStreamsFiles\\output_file.txt");
+            in = new FileReader("src\\by\\epam\\pre_mentoring\\aircompany\\util\\IOStreamsFiles\\input_file.txt");
+            out = new FileWriter("src\\by\\epam\\pre_mentoring\\aircompany\\util\\IOStreamsFiles\\output_file.txt");
             int c;
 
             while ((c = in.read()) != -1) {
