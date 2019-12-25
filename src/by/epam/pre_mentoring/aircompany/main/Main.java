@@ -14,18 +14,13 @@ package by.epam.pre_mentoring.aircompany.main;
  * Найти самолет в компании, соответствующий заданному диапазону параметров.
  */
 import by.epam.pre_mentoring.aircompany.bean.AirCompany;
-import by.epam.pre_mentoring.aircompany.bean.Airplane;
-import by.epam.pre_mentoring.aircompany.logic.Search;
 import by.epam.pre_mentoring.aircompany.logic.WorkWithArray;
 import by.epam.pre_mentoring.aircompany.util.console.ReadConsole;
 import by.epam.pre_mentoring.aircompany.util.exceptions.NotValidDataTypeException;
-import by.epam.pre_mentoring.aircompany.util.i_oStreams.InOutStreams;
-import by.epam.pre_mentoring.aircompany.util.work_withDB.DBconnection;
+
 
 
 import java.io.IOException;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.InputMismatchException;
 
 
