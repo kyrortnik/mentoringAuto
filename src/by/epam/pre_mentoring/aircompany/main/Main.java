@@ -18,6 +18,7 @@ import by.epam.pre_mentoring.aircompany.bean.Airplane;
 import by.epam.pre_mentoring.aircompany.logic.Search;
 import by.epam.pre_mentoring.aircompany.logic.WorkWithArray;
 import by.epam.pre_mentoring.aircompany.util.console.ReadConsole;
+import by.epam.pre_mentoring.aircompany.util.exceptions.NoValueException;
 import by.epam.pre_mentoring.aircompany.util.exceptions.NotValidDataTypeException;
 import by.epam.pre_mentoring.aircompany.util.i_oStreams.InOutStreams;
 import by.epam.pre_mentoring.aircompany.util.work_withDB.DBconnection;
@@ -31,7 +32,7 @@ import java.util.InputMismatchException;
 
 
 public class Main {
-    public static void main(String[] args) throws InputMismatchException, NotValidDataTypeException, IOException {
+    public static void main(String[] args) throws InputMismatchException, NoValueException, IOException {
 
 
         AirCompany company = new AirCompany();
@@ -105,6 +106,7 @@ public class Main {
                         WorkWithArray.grossTonnage(company);
 
                         break;
+
                     default:
                         System.out.println("no such action. please re-enter action number.");
                 }
