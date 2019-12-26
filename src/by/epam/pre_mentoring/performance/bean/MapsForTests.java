@@ -9,7 +9,7 @@ public class MapsForTests {
 
     public HashMap<Integer,String> randomHashMap(){
         HashMap<Integer,String> map = new HashMap<>();
-        for (int i = 0;i<10000;i++){
+        for (int i = 0;i<20000;i++){
             map.put(i,logic.randomString());
 
         }
@@ -18,7 +18,7 @@ public class MapsForTests {
 
     public TreeMap<Integer,String> randomTreeMap(){
         TreeMap<Integer,String> map = new TreeMap<>();
-        for (int i = 0;i<10000;i++){
+        for (int i = 0;i<20000;i++){
             map.put(i,logic.randomString());
         }
         return map;

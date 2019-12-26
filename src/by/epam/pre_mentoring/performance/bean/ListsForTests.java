@@ -1,7 +1,6 @@
 package by.epam.pre_mentoring.performance.bean;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.*;
 
 
 public class ListsForTests {
@@ -10,19 +9,21 @@ public class ListsForTests {
 
     public ArrayList<String> randomArrayList(){
         ArrayList<String> list = new ArrayList<>();
-        for (int i = 0;i<10000;i++){
-            list.add(logic.randomString()+ "\n");
+        for (int i = 0;i<20000;i++){
+            list.add(logic.randomString());
         }
         return list;
     }
 
-    public LinkedList<String> randomLinkedList(){
+    public LinkedList<String> fromArrayListToLinkedList(){
         LinkedList<String> list = new LinkedList<>();
-        for (int i = 0;i<10000;i++){
-            list.add(logic.randomString()+ "\n");
+        for (int i = 0;i<20000;i++){
+            list.add(randomArrayList().get(i));
         }
         return list;
     }
+
+
 
 
 

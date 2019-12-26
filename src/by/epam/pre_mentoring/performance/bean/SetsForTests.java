@@ -9,16 +9,16 @@ public class SetsForTests {
 
     public HashSet<String> randomHashSet(){
         HashSet<String> set = new HashSet<>();
-        for (int i = 0;i<10000;i++){
-            set.add(logic.randomString()+ "\n");
+        for (int i = 0;i<20000;i++){
+            set.add(logic.randomString());
         }
         return set;
     }
 
     public TreeSet<String> randomTreeSet(){
         TreeSet<String> set = new TreeSet<>();
-        for (int i = 0;i<10000;i++){
-            set.add(logic.randomString()+ "\n");
+        for (int i = 0;i<20000;i++){
+            set.add(logic.randomString());
         }
         return set;
     }
