@@ -17,9 +17,10 @@ public class MainClass {
         float timeArrayList;
         float timeLinkedList;
 
+
         ListsForTests lists = new ListsForTests();
         ArrayList<String> arrayList = lists.randomArrayList();
-        LinkedList<String> linkedList = lists.fromArrayListToLinkedList();
+        LinkedList<String> linkedList = lists.randomLinkedList();
 
         SetsForTests sets = new SetsForTests();
         HashSet<String> hashSet = sets.randomHashSet();
@@ -28,6 +29,8 @@ public class MainClass {
         MapsForTests maps = new MapsForTests();
         HashMap<Integer, String> hashMap = maps.randomHashMap();
         TreeMap<Integer, String> treeMap = maps.randomTreeMap();
+
+
 
 
         do {
@@ -47,6 +50,7 @@ public class MainClass {
                     System.out.println("Type number");
                     switch (console.readInt()) {
                         case 1:
+
 
                             System.out.println("ArrayList values:");
                             System.out.println(arrayList);

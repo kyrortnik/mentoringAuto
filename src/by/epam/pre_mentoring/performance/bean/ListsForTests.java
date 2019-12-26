@@ -15,10 +15,10 @@ public class ListsForTests {
         return list;
     }
 
-    public LinkedList<String> fromArrayListToLinkedList(){
+    public LinkedList<String> randomLinkedList(){
         LinkedList<String> list = new LinkedList<>();
         for (int i = 0;i<20000;i++){
-            list.add(randomArrayList().get(i));
+            list.add(logic.randomString());
         }
         return list;
     }
