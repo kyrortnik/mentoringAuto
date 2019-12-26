@@ -7,6 +7,7 @@ import java.util.*;
 
 public class MainClass {
     public static void main(String[] args) {
+
         ReadConsole console = new ReadConsole();
         boolean check;
         long start1;
@@ -31,8 +32,7 @@ public class MainClass {
         HashMap<Integer, String> hashMap = maps.randomHashMap();
         TreeMap<Integer, String> treeMap = maps.randomTreeMap();
 
-
-
+        
 
         do {
             System.out.println("Which collections to compare:");
@@ -67,11 +67,11 @@ public class MainClass {
                             String str = console.readString();
 
                             start1 = System.currentTimeMillis();
-                            WorkWithLists.findString(arrayList, str);
+                            Logic.findString(arrayList, str);
                             timeArrayList = (System.currentTimeMillis() - start1);
 
                             start2 = System.currentTimeMillis();
-                            WorkWithLists.findString(linkedList, str);
+                            Logic.findString(linkedList, str);
                             timeLinkedList = (System.currentTimeMillis() - start2);
 
                             System.out.println("Time for ArrayList to search: "+ timeArrayList + " ms.");
@@ -133,11 +133,11 @@ public class MainClass {
                             String str = console.readString();
 
                             start1 = System.currentTimeMillis();
-                            WorkWithLists.findString(hashSet, str);
+                            Logic.findString(hashSet, str);
                             timeHashSet = System.currentTimeMillis() - start1;
 
                             start2 = System.currentTimeMillis();
-                            WorkWithLists.findString(treeSet, str);
+                            Logic.findString(treeSet, str);
                             timeTreeSet = System.currentTimeMillis() - start2;
 
                             System.out.println("Time for hashSet to find an item: "+ timeHashSet +" ms.");
@@ -198,11 +198,11 @@ public class MainClass {
                             String str = console.readString();
 
                             start1 = System.currentTimeMillis();
-                            WorkWithLists.findString(hashMap, str);
+                            Logic.findString(hashMap, str);
                             timeHashMap = System.currentTimeMillis() - start1;
 
                             start2 = System.currentTimeMillis();
-                            WorkWithLists.findString(treeMap, str);
+                            Logic.findString(treeMap, str);
                             timeTreeMap = System.currentTimeMillis() - start2;
 
                             System.out.println("Time for hashMap to find an item: "+ timeHashMap +" ms.");
@@ -255,6 +255,5 @@ public class MainClass {
 
         } while (check) ;
     }
-
 
 }
