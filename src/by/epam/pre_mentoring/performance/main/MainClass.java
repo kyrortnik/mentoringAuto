@@ -1,10 +1,7 @@
 package by.epam.pre_mentoring.performance.main;
 
 import by.epam.pre_mentoring.aircompany.util.console.ReadConsole;
-import by.epam.pre_mentoring.performance.bean.ListsForTests;
-import by.epam.pre_mentoring.performance.bean.MapsForTests;
-import by.epam.pre_mentoring.performance.bean.SetsForTests;
-import by.epam.pre_mentoring.performance.bean.WorkWithLists;
+import by.epam.pre_mentoring.performance.bean.*;
 
 import java.util.*;
 
@@ -16,6 +13,10 @@ public class MainClass {
         long start2;
         float timeArrayList;
         float timeLinkedList;
+        float timeHashSet;
+        float timeTreeSet;
+        float timeHashMap;
+        float timeTreeMap;
 
 
         ListsForTests lists = new ListsForTests();
@@ -39,6 +40,7 @@ public class MainClass {
             System.out.println("2. Sets (HashSet vs. TreeMap)");
             System.out.println("3. Maps (HashMap vs. TreeMap)");
             System.out.println("Type number of collection:");
+
             switch (console.readInt()) {
                 case 1:
 
@@ -113,31 +115,64 @@ public class MainClass {
 
                     System.out.println("What actions?");
                     System.out.println(" 1.Show values");
-                    System.out.println(" 1.Search for string");
-                    System.out.println(" 2.Add string");
-                    System.out.println(" 3.Remove string");
+                    System.out.println(" 2.Search for string");
+                    System.out.println(" 3.Add string");
+                    System.out.println(" 4.Remove string");
                     System.out.println("Type number");
                     switch (console.readInt()) {
                         case 1:
+
+                            System.out.println("hashSet values:");
+                            System.out.println(hashSet);
+
+                            System.out.println("treeSet values:");
                             System.out.println(hashSet);
                             break;
                         case 2:
                             System.out.println("Enter string");
                             String str = console.readString();
+
+                            start1 = System.currentTimeMillis();
                             WorkWithLists.findString(hashSet, str);
+                            timeHashSet = System.currentTimeMillis() - start1;
+
+                            start2 = System.currentTimeMillis();
                             WorkWithLists.findString(treeSet, str);
+                            timeTreeSet = System.currentTimeMillis() - start2;
+
+                            System.out.println("Time for hashSet to find an item: "+ timeHashSet +" ms.");
+                            System.out.println("Time for TreeSet to find an item: "+ timeTreeSet+ " ms.");
                             break;
                         case 3:
                             System.out.println("Enter string");
                             String str1 = console.readString();
+
+                            start1 = System.currentTimeMillis();
                             hashSet.add(str1);
+                            timeHashSet = System.currentTimeMillis() - start1;
+
+                            start2 = System.currentTimeMillis();
                             treeSet.add(str1);
+                            timeTreeSet = System.currentTimeMillis() - start2;
+
+                            System.out.println("Time for hashSet to add an item: "+ timeHashSet +" ms.");
+                            System.out.println("Time for TreeSet to add an item: "+ timeTreeSet+ " ms.");
                             break;
                         case 4:
                             System.out.println("Enter string");
                             String str2 = console.readString();
+
+                            start1 = System.currentTimeMillis();
                             hashSet.remove(str2);
+                            timeHashSet = System.currentTimeMillis() - start1;
+
+                            start2 = System.currentTimeMillis();
                             treeSet.remove(str2);
+                            timeTreeSet = System.currentTimeMillis() - start2;
+
+                            System.out.println("Time for hashSet to remove an item: "+ timeHashSet +" ms.");
+                            System.out.println("Time for TreeSet to remove an item: "+ timeTreeSet+ " ms.");
+
                             break;
                     }
                     break;
@@ -151,25 +186,61 @@ public class MainClass {
                     System.out.println("Type number");
                     switch (console.readInt()) {
                         case 1:
+
+                            System.out.println("hasMap values:");
                             System.out.println(hashMap);
+
+                            System.out.println("treeMap values:");
+                            System.out.println(treeMap);
                             break;
                         case 2:
                             System.out.println("Enter string");
                             String str = console.readString();
+
+                            start1 = System.currentTimeMillis();
                             WorkWithLists.findString(hashMap, str);
+                            timeHashMap = System.currentTimeMillis() - start1;
+
+                            start2 = System.currentTimeMillis();
                             WorkWithLists.findString(treeMap, str);
+                            timeTreeMap = System.currentTimeMillis() - start2;
+
+                            System.out.println("Time for hashMap to find an item: "+ timeHashMap +" ms.");
+                            System.out.println("Time for treeMap to find an item: "+ timeTreeMap+ " ms.");
+
                             break;
                         case 3:
                             System.out.println("Enter string");
                             String str1 = console.readString();
+
+                            start1 = System.currentTimeMillis();
                             hashMap.put(hashMap.size(), str1);
+                            timeHashMap = System.currentTimeMillis() - start1;
+
+                            start2 = System.currentTimeMillis();
                             treeMap.put(treeMap.size(), str1);
+                            timeTreeMap = System.currentTimeMillis() - start2;
+
+                            System.out.println("Time for hashMap to add an item: "+ timeHashMap +" ms.");
+                            System.out.println("Time for treeMap to add an item: "+ timeTreeMap+ " ms.");
                             break;
                         case 4:
                             System.out.println("Enter string");
                             String str2 = console.readString();
-                            hashMap.remove(str2);
-                            treeMap.remove(str2);
+
+
+
+                            start1 = System.currentTimeMillis();
+                            hashMap.remove(Logic.findValue(hashMap,str2));
+                            timeHashMap = System.currentTimeMillis() - start1;
+
+                            start2 = System.currentTimeMillis();
+                            treeMap.remove(Logic.findValue(treeMap,str2));
+                            timeTreeMap = System.currentTimeMillis() - start2;
+
+                            System.out.println("Time for hashMap to remove an item: "+ timeHashMap +" ms.");
+                            System.out.println("Time for treeMap to remove an item: "+ timeTreeMap+ " ms.");
+
                             break;
                     }
                     break;
@@ -184,4 +255,6 @@ public class MainClass {
 
         } while (check) ;
     }
+
+
 }

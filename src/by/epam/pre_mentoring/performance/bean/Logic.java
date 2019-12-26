@@ -1,6 +1,7 @@
 package by.epam.pre_mentoring.performance.bean;
 
 
+import java.util.Map;
 import java.util.Random;
 
 public class Logic {
@@ -16,5 +17,15 @@ public class Logic {
             buffer.append((char)randomLimitedInt);
         }
         return buffer.toString();
+    }
+
+    public static Integer findValue(Map<Integer,String> map, String str){
+        Integer num = 0;
+        for (int i=0;i<map.size();i++){
+            if (map.get(i).equals(str)){
+                num = i;
+            }
+        }
+        return num;
     }
 }
