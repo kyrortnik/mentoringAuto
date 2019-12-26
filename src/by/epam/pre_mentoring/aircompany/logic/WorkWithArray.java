@@ -5,6 +5,7 @@ import by.epam.pre_mentoring.aircompany.bean.Airplane;
 import by.epam.pre_mentoring.aircompany.util.console.ReadConsole;
 import by.epam.pre_mentoring.aircompany.util.exceptions.NoValueException;
 import by.epam.pre_mentoring.aircompany.util.exceptions.NotValidDataTypeException;
+import by.epam.pre_mentoring.aircompany.util.json.ToJSON;
 import by.epam.pre_mentoring.aircompany.util.work_withDB.DBconnection;
 
 import java.util.ArrayList;
@@ -24,8 +25,11 @@ public abstract class WorkWithArray {
             }
         };
 
-        company.getCompany().sort(airplaneComparator);
-        System.out.println(company.toString());
+            company.getCompany().sort(airplaneComparator);
+            if (company.getCompany().isEmpty()){
+                System.out.println("No airplane records yet.");
+            }
+            System.out.println(company.toString());
 
     }
 
@@ -146,8 +150,13 @@ public abstract class WorkWithArray {
         company.add(plane);
         System.out.println("Plane is added.");
 
+        ToJSON json = new ToJSON();
+
+
+
+
         DBconnection dbconnection = new DBconnection();
-        dbconnection.addToDB(plane);
+        dbconnection.addToDB(json.writeToJSON(plane));
     }
 
 
