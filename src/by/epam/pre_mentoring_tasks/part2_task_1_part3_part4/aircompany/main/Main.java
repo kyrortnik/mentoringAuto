@@ -1,4 +1,4 @@
-package by.epam.pre_mentoring_tasks.part3_part4.aircompany.main;
+package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.main;
 
 /**
  * Спроектировать объектную модель для заданной предметной области. Использовать (продемонстрировать умение работать):
@@ -13,10 +13,10 @@ package by.epam.pre_mentoring_tasks.part3_part4.aircompany.main;
  * Провести сортировку самолетов компании по дальности полета.
  * Найти самолет в компании, соответствующий заданному диапазону параметров.
  */
-import by.epam.pre_mentoring_tasks.part3_part4.aircompany.bean.AirCompany;
-import by.epam.pre_mentoring_tasks.part3_part4.aircompany.logic.WorkWithArray;
-import by.epam.pre_mentoring_tasks.part3_part4.aircompany.util.console.ReadConsole;
-import by.epam.pre_mentoring_tasks.part3_part4.aircompany.util.exceptions.NoValueException;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.bean.AirCompany;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exceptions.NoValueException;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.WorkWithArray;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.console.ReadConsole;
 
 
 import java.io.IOException;

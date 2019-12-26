@@ -1,7 +1,7 @@
-package by.epam.pre_mentoring_tasks.part3_part4.aircompany.util.work_withDB;
+package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.work_withDB;
 
 
-import by.epam.pre_mentoring_tasks.part3_part4.aircompany.logic.IExternalSources;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.IExternalSources;
 import org.json.simple.JSONObject;
 
 import java.sql.*;

@@ -1,4 +1,4 @@
-package by.epam.pre_mentoring_tasks.part3_part4.aircompany.util.console;
+package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.console;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

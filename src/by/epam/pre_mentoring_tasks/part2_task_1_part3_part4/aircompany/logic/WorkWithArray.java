@@ -1,11 +1,11 @@
-package by.epam.pre_mentoring_tasks.part3_part4.aircompany.logic;
+package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic;
 
-import by.epam.pre_mentoring_tasks.part3_part4.aircompany.bean.AirCompany;
-import by.epam.pre_mentoring_tasks.part3_part4.aircompany.bean.Airplane;
-import by.epam.pre_mentoring_tasks.part3_part4.aircompany.util.console.ReadConsole;
-import by.epam.pre_mentoring_tasks.part3_part4.aircompany.util.exceptions.NoValueException;
-import by.epam.pre_mentoring_tasks.part3_part4.aircompany.util.json.ToJSON;
-import by.epam.pre_mentoring_tasks.part3_part4.aircompany.util.work_withDB.DBconnection;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.bean.AirCompany;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.bean.Airplane;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exceptions.NoValueException;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.console.ReadConsole;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.json.ToJSON;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.work_withDB.DBconnection;
 
 import java.util.Comparator;
 

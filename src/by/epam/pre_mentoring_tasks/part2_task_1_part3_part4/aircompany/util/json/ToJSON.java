@@ -1,9 +1,9 @@
-package by.epam.pre_mentoring_tasks.part3_part4.aircompany.util.json;
+package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.json;
 
 
 
-import by.epam.pre_mentoring_tasks.part3_part4.aircompany.bean.Airplane;
-import by.epam.pre_mentoring_tasks.part3_part4.aircompany.logic.IExternalSources;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.bean.Airplane;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.IExternalSources;
 import org.json.simple.JSONObject;
 
 public class ToJSON  implements IExternalSources {
