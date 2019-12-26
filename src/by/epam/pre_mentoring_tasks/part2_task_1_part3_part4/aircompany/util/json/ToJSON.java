@@ -3,10 +3,9 @@ package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.jso
 
 
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.bean.Airplane;
-import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.IExternalSources;
 import org.json.simple.JSONObject;
 
-public class ToJSON  implements IExternalSources {
+public class ToJSON {
 
     public JSONObject writeToJSON(Airplane plane){
         JSONObject obj = new JSONObject();

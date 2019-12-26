@@ -43,7 +43,6 @@ public abstract class WorkWithArray {
             System.out.println("5.Producer");
             System.out.println("6.Country of origin");
             System.out.println("7. Height of Flight");
-            System.out.println("============================================================== |");
             System.out.println();
             System.out.println("Type the number of characteristics you would like to perform:");
             System.out.println("============================================================== |");
@@ -57,7 +56,7 @@ public abstract class WorkWithArray {
 
                     try {
                         Search.findByModel(company.getCompany(), mdl);
-                    } catch (NullPointerException | NoValueException e) {
+                    } catch ( NoValueException e) {
                         System.out.println("No such record.");
                     }
                     break;
@@ -68,8 +67,8 @@ public abstract class WorkWithArray {
 
                     try {
                         Search.findBySeatsNum(company.getCompany(), seats);
-                    } catch (NullPointerException e) {
-                        System.out.println("null exception");
+                    } catch (NoValueException e) {
+                        System.out.println("No such record.");
                     }
                     break;
 
@@ -79,8 +78,8 @@ public abstract class WorkWithArray {
 
                     try {
                         Search.findByTonnage(company.getCompany(), ton);
-                    } catch (NullPointerException e) {
-                        System.out.println("null exception");
+                    } catch (NoValueException e) {
+                        System.out.println("No such record.");
                     }
                     break;
 
@@ -90,8 +89,8 @@ public abstract class WorkWithArray {
 
                     try {
                         Search.findByDistance(company.getCompany(), dis);
-                    } catch (NullPointerException e) {
-                        System.out.println("null exception");
+                    } catch (NoValueException e) {
+                        System.out.println("No such record.");
                     }
                     break;
 
@@ -102,8 +101,8 @@ public abstract class WorkWithArray {
 
                     try {
                         Search.findByProducer(company.getCompany(), prd);
-                    } catch (NullPointerException e) {
-                        System.out.println("null exception");
+                    } catch (NoValueException e) {
+                        System.out.println("No such record.");
                     }
                     break;
                 case 6:
@@ -112,8 +111,8 @@ public abstract class WorkWithArray {
 
                     try {
                         Search.findByCountry(company.getCompany(), country);
-                    } catch (NullPointerException e) {
-                        System.out.println("null exception");
+                    } catch (NoValueException e) {
+                        System.out.println("No such record.");
                     }
                     break;
 
@@ -123,8 +122,8 @@ public abstract class WorkWithArray {
 
                     try {
                         Search.findByHeight(company.getCompany(), high);
-                    } catch (NullPointerException e) {
-                        System.out.println("null exception");
+                    } catch (NoValueException e) {
+                        System.out.println("No such record.");
                     }
                     break;
             }
@@ -132,7 +131,6 @@ public abstract class WorkWithArray {
     }
 
     public static void addPlane(AirCompany company){
-
 
             Airplane plane = new Airplane();
 
@@ -163,11 +161,11 @@ public abstract class WorkWithArray {
             System.out.println("Type plane flight distance:");
             int distance = console.readInt();
             plane.setFlightDistance(distance);
+
             company.add(plane);
             System.out.println("Plane is added.");
 
             ToJSON json = new ToJSON();
-
 
             DBconnection dbconnection = new DBconnection();
             dbconnection.addToDB(json.writeToJSON(plane));
@@ -212,7 +210,7 @@ public abstract class WorkWithArray {
 
                 try {
                     Search.findBySeatsNum(company.getCompany(), seats);
-                } catch (NullPointerException e) {
+                } catch (NoValueException e) {
                     System.out.println("null exception");
                 }
                 break;
@@ -223,7 +221,7 @@ public abstract class WorkWithArray {
 
                 try {
                     Search.findByTonnage(company.getCompany(), ton);
-                } catch (NullPointerException e) {
+                } catch (NullPointerException | NoValueException e) {
                     System.out.println("null exception");
                 }
                 break;
@@ -234,7 +232,7 @@ public abstract class WorkWithArray {
 
                 try {
                     Search.findByDistance(company.getCompany(), dis);
-                } catch (NullPointerException e) {
+                } catch (NullPointerException | NoValueException e) {
                     System.out.println("null exception");
                 }
                 break;
@@ -246,7 +244,7 @@ public abstract class WorkWithArray {
 
                 try {
                     Search.findByProducer(company.getCompany(), prd);
-                } catch (NullPointerException e) {
+                } catch (NullPointerException | NoValueException e) {
                     System.out.println("null exception");
                 }
                 break;
@@ -256,7 +254,7 @@ public abstract class WorkWithArray {
 
                 try {
                     Search.findByCountry(company.getCompany(), cnt);
-                } catch (NullPointerException e) {
+                } catch (NullPointerException | NoValueException e) {
                     System.out.println("null exception");
                 }
                 break;
@@ -267,7 +265,7 @@ public abstract class WorkWithArray {
 
                 try {
                     Search.findByHeight(company.getCompany(), high);
-                } catch (NullPointerException e) {
+                } catch (NullPointerException | NoValueException e) {
                     System.out.println("null exception");
                 }
                 break;

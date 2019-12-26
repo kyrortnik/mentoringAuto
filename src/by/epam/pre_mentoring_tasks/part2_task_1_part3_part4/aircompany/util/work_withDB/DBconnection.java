@@ -1,13 +1,13 @@
 package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.work_withDB;
 
 
-import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.IExternalSources;
+
 import org.json.simple.JSONObject;
 
 import java.sql.*;
 
 
-public class DBconnection  implements IExternalSources {
+public class DBconnection  {
     final String url = "jdbc:postgresql://localhost:5432/postgres";
     final String user = "postgres";
     final String password = "4815162342";
@@ -28,22 +28,24 @@ public class DBconnection  implements IExternalSources {
     }
 
     public void createDB(){
-        checkDB();
-        try {
-            Connection connection = DriverManager.getConnection(url, user, password);
-            Statement statement = connection.createStatement();
-            statement.executeQuery("CREATE TABLE airplanes (\n" +
-                    "plane_id SERIAL PRIMARY KEY NOT NULL,\n" +
-                    "plane_body varchar (255)\n" +
-                    ")");
+        if (!checkDB()) {
+            try {
+                Connection connection = DriverManager.getConnection(url, user, password);
+                Statement statement = connection.createStatement();
+                statement.executeUpdate("CREATE TABLE airplanes (\n" +
+                        "plane_id SERIAL PRIMARY KEY NOT NULL,\n" +
+                        "plane_body varchar (255)\n" +
+                        ")");
 
-        }catch (SQLException e){
-            e.printStackTrace();
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
         }
-        }
+    }
 
 
-    public void showAllDB(){
+    ///////////////////////////////
+   public void showAllDB(){
         createDB();
         try{
 
@@ -63,6 +65,8 @@ public class DBconnection  implements IExternalSources {
             e.printStackTrace();
         }
     }
+
+
     public void addToDB(JSONObject plane){
         createDB();
         try{
@@ -76,6 +80,9 @@ public class DBconnection  implements IExternalSources {
             System.out.println("Incorrect input values");
         }
     }
+
+
+    ///////////////////////////////
     public void removeFromDB(String value, String column){
         try{
             Connection connection = DriverManager.getConnection(url,user,password);
