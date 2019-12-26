@@ -63,20 +63,8 @@ public class Main {
 
                     case 2:
 
-                        System.out.println("Type by which characteristics you would like to search for plane:");
-                        System.out.println("1. Plane Model");
-                        System.out.println("2.Number of seats");
-                        System.out.println("3.Tonnage");
-                        System.out.println("4.Flight Distance");
-                        System.out.println("5.Producer");
-                        System.out.println("6.Country of origin");
-                        System.out.println("7. Height of Flight");
-                        System.out.println("============================================================== |");
-                        System.out.println();
-                        System.out.println("Type the number of characteristics you would like to perform:");
-                        System.out.println("============================================================== |");
 
-                        WorkWithArray.findPlane(console.readInt(),company);
+                        WorkWithArray.findPlane(company);
                         break;
 
                     case 3:

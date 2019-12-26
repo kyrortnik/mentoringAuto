@@ -12,11 +12,27 @@ public class DBconnection  implements IExternalSources {
     final String user = "postgres";
     final String password = "4815162342";
 
+    public boolean checkDB(){
+        boolean check = false;
+        try
+        {
+            Connection connection = DriverManager.getConnection(url,user,password);
+            ResultSet resultSet = connection.getMetaData().getTables(null,null,"airplanes",null);
+            if (resultSet.next()){
+                check = true;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return check;
+    }
+
     public void createDB(){
+        checkDB();
         try {
             Connection connection = DriverManager.getConnection(url, user, password);
             Statement statement = connection.createStatement();
-            statement.executeQuery("CREATE TABLE Airplanes (\n" +
+            statement.executeQuery("CREATE TABLE airplanes (\n" +
                     "plane_id SERIAL PRIMARY KEY NOT NULL,\n" +
                     "plane_body varchar (255)\n" +
                     ")");
@@ -48,6 +64,7 @@ public class DBconnection  implements IExternalSources {
         }
     }
     public void addToDB(JSONObject plane){
+        createDB();
         try{
             Connection connection = DriverManager.getConnection(url,user,password);
             Statement statement = connection.createStatement();
