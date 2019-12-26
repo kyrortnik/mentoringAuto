@@ -8,24 +8,25 @@ import java.util.Set;
 
 public class WorkWithLists {
 
-    public static void findString(List<String> list, String str) throws NoValueException{
-        for (String s : list){
-            if (str.equals(s)){
-                System.out.println(s);
-            }else{
-                throw new NoValueException("no such string");
-            }
+    public static void findString(List<String> list, String str) throws NullPointerException{
+        try{
+            for (String s : list){
+                if (str.equals(s)){
+                    System.out.println(s);
+                }
 
+            }
+        }catch (NullPointerException e){
+            System.out.println("nope");
         }
+
 
     }
 
-    public static void findString(Set<String> set, String str) throws NoValueException{
+    public static void findString(Set<String> set, String str) {
         for (String s : set){
             if (str.equals(s)){
                 System.out.println(s);
-            }else {
-                throw  new NoValueException("no such string");
             }
         }
     }

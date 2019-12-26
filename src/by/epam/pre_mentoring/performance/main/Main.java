@@ -11,7 +11,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws NoValueException {
         ReadConsole console = new ReadConsole();
-        boolean check = true;
+        boolean check;
 
 
         do {
@@ -38,19 +38,21 @@ public class Main {
                             String str = console.readString();
                             WorkWithLists.findString(arrayList, str);
                             WorkWithLists.findString(linkedList, str);
+                            break;
                         case 2:
                             System.out.println("Enter string");
                             String str1 = console.readString();
                             arrayList.add(str1);
                             linkedList.add(str1);
+                            break;
                         case 3:
                             System.out.println("Enter string");
                             String str2 = console.readString();
                             arrayList.remove(str2);
                             linkedList.remove(str2);
-
-
+                            break;
                     }
+                    break;
                 case 2:
                     SetsForTests sets = new SetsForTests();
                     HashSet<String> hashSet = sets.randomHashSet();
@@ -78,6 +80,7 @@ public class Main {
                             hashSet.remove(str2);
                             treeSet.remove(str2);
                     }
+                    break;
                 case 3:
                     MapsForTests maps = new MapsForTests();
                     HashMap<Integer, String> hashMap = maps.randomHashMap();
@@ -105,6 +108,7 @@ public class Main {
                             hashMap.remove(str2);
                             treeMap.remove(str2);
                     }
+                    break;
                 default:
                     System.out.println("Incorerct.Plese reenter.");
 
