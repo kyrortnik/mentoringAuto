@@ -32,13 +32,6 @@ public class Main {
         boolean check;
 
 
-
-        /*company.add(new Airplane(10000, "China Inc.", "China", 737, 300, 500, 20000));
-        company.add(new Airplane(20000, "AirBUS Inc.", "Netherlands", 550, 600, 1000, 20000));
-        company.add(new Airplane(15000, "Plane LLC.", "Belarus",  440, 250, 700, 12000));
-        company.add(new Airplane(15000, "Boeing", "USA", 737, 450, 700, 15000));*/
-
-
             System.out.println("                    Hello and Welcome!");
 
             do {
