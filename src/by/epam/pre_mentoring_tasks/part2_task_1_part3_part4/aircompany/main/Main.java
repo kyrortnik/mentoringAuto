@@ -14,18 +14,17 @@ package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.main;
  * Найти самолет в компании, соответствующий заданному диапазону параметров.
  */
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.bean.AirCompany;
-import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exceptions.NoValueException;
-import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.WorkWithArray;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.WorkWithArrayList;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.console.ReadConsole;
 
 
-import java.io.IOException;
+
 import java.util.InputMismatchException;
 
 
 
 public class Main {
-    public static void main(String[] args) throws InputMismatchException, NoValueException, IOException {
+    public static void main(String[] args) throws InputMismatchException {
 
 
         AirCompany company = new AirCompany();
@@ -58,45 +57,50 @@ public class Main {
                 switch (console.readInt()) {
                     case 1:
 
-                        WorkWithArray.showAllPlanes(company);
+                        WorkWithArrayList.showAllPlanes(company);
                         break;
 
                     case 2:
+                        if (company.getCompany().isEmpty()){
+                            System.out.println("No airplane records yet.");
+                        }else{
 
-                        System.out.println("Type by which characteristics you would like to search for plane:");
-                        System.out.println("1. Plane Model");
-                        System.out.println("2.Number of seats");
-                        System.out.println("3.Tonnage");
-                        System.out.println("4.Flight Distance");
-                        System.out.println("5.Producer");
-                        System.out.println("6.Country of origin");
-                        System.out.println("7. Height of Flight");
-                        System.out.println("============================================================== |");
-                        System.out.println();
-                        System.out.println("Type the number of characteristics you would like to perform:");
-                        System.out.println("============================================================== |");
+                            System.out.println("Type by which characteristics you would like to search for plane:");
+                            System.out.println("1. Plane Model");
+                            System.out.println("2.Number of seats");
+                            System.out.println("3.Tonnage");
+                            System.out.println("4.Flight Distance");
+                            System.out.println("5.Producer");
+                            System.out.println("6.Country of origin");
+                            System.out.println("7. Height of Flight");
+                            System.out.println("============================================================== |");
+                            System.out.println();
+                            System.out.println("Type the number of characteristics you would like to perform:");
+                            System.out.println("============================================================== |");
 
-                        WorkWithArray.findPlane(console.readInt(),company);
+                            WorkWithArrayList.findPlane(console.readInt(),company);
+                        }
+
                         break;
 
                     case 3:
 
-                        WorkWithArray.addPlane(company);
+                        WorkWithArrayList.addPlane(company);
 
                         break;
                     case 4:
 
-                        WorkWithArray.deletePlane(company);
+                        WorkWithArrayList.deletePlane(company);
 
                         break;
                     case 5:
 
-                        WorkWithArray.grossSeatNum(company);
+                        WorkWithArrayList.grossSeatNum(company);
 
                         break;
                     case 6:
 
-                        WorkWithArray.grossTonnage(company);
+                        WorkWithArrayList.grossTonnage(company);
 
                         break;
 

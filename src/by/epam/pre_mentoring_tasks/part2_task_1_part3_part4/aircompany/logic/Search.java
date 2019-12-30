@@ -7,9 +7,9 @@ import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exce
 
 import java.util.ArrayList;
 
-public abstract class Search {
+abstract class Search {
 
-    public static void findByTonnage(ArrayList<Airplane> company, int tonnage)  {
+    static void findByTonnage(ArrayList<Airplane> company, int tonnage)  {
 
         for ( Airplane pl: company){
             if (pl.getTonnage()== tonnage){
@@ -20,7 +20,7 @@ public abstract class Search {
 
 
     }
-    public static void  findBySeatsNum(ArrayList<Airplane> company, int seats)  {
+    static void  findBySeatsNum(ArrayList<Airplane> company, int seats)  {
 
         for ( Airplane pl: company){
             if (pl.getSeatsNum()== seats){
@@ -30,7 +30,7 @@ public abstract class Search {
 
     }
 
-    public static void findByModel(ArrayList<Airplane> company, int model) throws NoValueException {
+    static void findByModel(ArrayList<Airplane> company, int model) throws NoValueException {
 
 
             for ( Airplane pl: company){
@@ -44,11 +44,9 @@ public abstract class Search {
             }
 
 
-
-
     }
 
-    public static void findByDistance(ArrayList<Airplane> company, int flightDistance) {
+    static void findByDistance(ArrayList<Airplane> company, int flightDistance) {
 
         for ( Airplane pl: company) {
             if (pl.getFlightDistance() == flightDistance) {
@@ -58,7 +56,7 @@ public abstract class Search {
     }
 
 
-    public static void  findByHeight(ArrayList<Airplane> company, int height) {
+    static void  findByHeight(ArrayList<Airplane> company, int height) {
 
         for ( Airplane pl: company){
             if (pl.getHeightOfFlight()== height){
@@ -68,7 +66,7 @@ public abstract class Search {
 
     }
 
-    public static void findByProducer(ArrayList<Airplane> company, String producer) {
+    static void findByProducer(ArrayList<Airplane> company, String producer) {
 
         for ( Airplane pl: company){
             if (producer.equals(pl.getProducer())){
@@ -77,7 +75,7 @@ public abstract class Search {
         }
 
     }
-    public static void findByCountry(ArrayList<Airplane> company, String country) {
+    static void findByCountry(ArrayList<Airplane> company, String country) {
 
         for ( Airplane pl: company){
             if (country.equals(pl.getCountryOfOrigin())){

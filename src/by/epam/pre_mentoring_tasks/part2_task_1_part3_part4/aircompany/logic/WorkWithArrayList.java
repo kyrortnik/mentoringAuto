@@ -9,7 +9,7 @@ import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.work
 
 import java.util.Comparator;
 
-public abstract class WorkWithArray {
+public abstract class WorkWithArrayList {
 
     private static ReadConsole console = new ReadConsole();
 

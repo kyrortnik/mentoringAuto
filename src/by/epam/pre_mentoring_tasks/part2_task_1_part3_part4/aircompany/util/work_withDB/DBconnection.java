@@ -10,32 +10,48 @@ import java.sql.*;
 public class DBconnection  implements IExternalSources {
     final String url = "jdbc:postgresql://localhost:5432/postgres";
     final String user = "postgres";
-    final String password = "4815162342";
+    final String password = "admin";
+
+
+    public boolean checkDBExists(){
+        boolean check = false;
+        try{
+            Connection connection = DriverManager.getConnection(url,user,password);
+
+            DatabaseMetaData dbm = connection.getMetaData();
+            ResultSet tables = dbm.getTables(null, null, "airplanes", null);
+            check = tables.next();
+        }catch (SQLException e){}
+        return  check;
+    }
+
 
     public void createDB(){
-        try {
-            Connection connection = DriverManager.getConnection(url, user, password);
-            Statement statement = connection.createStatement();
-            statement.executeQuery("CREATE TABLE Airplanes (\n" +
-                    "plane_id SERIAL PRIMARY KEY NOT NULL,\n" +
-                    "plane_body varchar (255)\n" +
-                    ")");
+        boolean check = checkDBExists();
+        if (check) {
+            try {
+                Connection connection = DriverManager.getConnection(url, user, password);
+                Statement statement = connection.createStatement();
+                statement.executeQuery("CREATE TABLE airplanes (\n" +
+                        "plane_id SERIAL PRIMARY KEY NOT NULL,\n" +
+                        "plane_body varchar (255)\n" +
+                        ")");
 
-        }catch (SQLException e){
-            e.printStackTrace();
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
         }
         }
 
 
     public void showAllDB(){
-        createDB();
         try{
 
             Connection connection = DriverManager.getConnection(url, user, password);
 
             Statement statement = connection.createStatement();
 
-            ResultSet resultSet = statement.executeQuery("select * from Airplanes");
+            ResultSet resultSet = statement.executeQuery("select * from airplanes");
 
             while(resultSet.next()){
                 String column1 = "plane_id: \b ";
@@ -48,17 +64,21 @@ public class DBconnection  implements IExternalSources {
         }
     }
     public void addToDB(JSONObject plane){
+        createDB();
         try{
             Connection connection = DriverManager.getConnection(url,user,password);
             Statement statement = connection.createStatement();
-            statement.executeUpdate("INSERT INTO airplanes(plane_body) VALUES("+ "'" + plane.toJSONString()+"'" + ")");
+            statement.executeUpdate("INSERT INTO airplanes (plane_body) VALUES("+ "'" + plane.toJSONString()+"'" + ")");
             System.out.println("Values has been added to DataBase");
 
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Incorrect input values");
+           // System.out.println("Incorrect input values");
         }
     }
+
+
+
     public void removeFromDB(String value, String column){
         try{
             Connection connection = DriverManager.getConnection(url,user,password);

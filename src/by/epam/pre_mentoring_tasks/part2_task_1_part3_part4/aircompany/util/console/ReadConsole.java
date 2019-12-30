@@ -14,6 +14,7 @@ public class ReadConsole {
         str = sc.nextLine();
         return str;
     }
+
     public int readInt() throws InputMismatchException {
         int number = 0;
         try {
