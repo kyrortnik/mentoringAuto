@@ -12,11 +12,20 @@ package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.main;
  * 5.Авиакомпания. Определить иерархию самолетов. Создать авиакомпанию. Посчитать общую вместимость и грузоподъемность.
  * Провести сортировку самолетов компании по дальности полета.
  * Найти самолет в компании, соответствующий заданному диапазону параметров.
+ *
+ * + Exceptions handeling
+ * + I/O Streams
+ * + JDBC
+ * + JSON parsing
  */
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.bean.AirCompany;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.WorkWithArrayList;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.console.ReadConsole;
 
+
+
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.WorkWithArrayList;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.console.ReadConsole;
 
 
 import java.util.InputMismatchException;
@@ -32,6 +41,7 @@ public class Main {
         boolean check;
 
 
+
             System.out.println("                    Hello and Welcome!");
 
             do {
@@ -40,15 +50,16 @@ public class Main {
                 System.out.println("1.View All Airplanes.");
                 System.out.println("2.Find a particular Airplane.");
                 System.out.println("3.Add an Airplane.");
-                System.out.println("4.Remove airplane form DB.");
+                System.out.println("4.Remove airplane.");
                 System.out.println("5.Show gross seats number.");
                 System.out.println("6.Show gross tonnage.");
-                System.out.println("============================================================== |");
+                System.out.println();
                 System.out.println("Type number of the action you would like to perform:");
                 System.out.println("============================================================== |");
 
                 switch (console.readInt()) {
                     case 1:
+
 
                         WorkWithArrayList.showAllPlanes(company);
                         break;
@@ -80,27 +91,48 @@ public class Main {
 
                         WorkWithArrayList.addPlane(company);
 
+                        WorkWithArrayList.showAllPlanes(company);
                         break;
-                    case 4:
+
+                    case 2:
+                        WorkWithArrayList.findPlane(company);
+                        break;
+
+                    case 3:
+                        WorkWithArrayList.addPlane(company);
+                        break;
+
 
                         WorkWithArrayList.deletePlane(company);
 
+
+                    case 4:
+                        WorkWithArrayList.deletePlane(company);
+
                         break;
-                    case 5:
+
 
                         WorkWithArrayList.grossSeatNum(company);
 
-                        break;
-                    case 6:
 
+                    case 5:
+                        WorkWithArrayList.grossSeatNum(company);
+
+                        break;
+
+
+                        WorkWithArrayList.grossTonnage(company);
+
+
+                    case 6:
                         WorkWithArrayList.grossTonnage(company);
 
                         break;
 
                     default:
-                        System.out.println("no such action. please re-enter action number.");
+                        System.out.println("No such action. Please re-enter action number.");
                 }
-                System.out.println("would you like to perform another action? Type Yes to do so:");
+                System.out.println("Would you like to perform another action? Type Yes to do so. Type anything else to exit application.");
                 String s = console.readString();
 
                 check = s.equalsIgnoreCase("yes");

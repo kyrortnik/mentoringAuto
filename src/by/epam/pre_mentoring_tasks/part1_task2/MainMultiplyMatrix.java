@@ -7,7 +7,7 @@ package by.epam.pre_mentoring_tasks.part1_task2;
  */
 
 
-public class MultiplyMatrix {
+public class MainMultiplyMatrix {
     public static void main(String[]args){
 
         int [][] matrix1 = new int[5][5];

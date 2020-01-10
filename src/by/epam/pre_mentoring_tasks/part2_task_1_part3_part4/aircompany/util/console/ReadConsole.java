@@ -5,9 +5,6 @@ import java.util.Scanner;
 
 public class ReadConsole {
 
-
-
-
     public String readString(){
         String str;
         Scanner sc = new Scanner(System.in);
