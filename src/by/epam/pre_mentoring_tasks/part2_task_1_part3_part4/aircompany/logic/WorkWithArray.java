@@ -59,7 +59,7 @@ public abstract class WorkWithArray {
                     try {
                         Search.findByModel(company.getCompany(), mdl);
                     } catch ( NoValueException e) {
-                        System.out.println("No such record.");
+                        System.out.println("No such plane model found.");
                     }
                     break;
 
@@ -70,7 +70,7 @@ public abstract class WorkWithArray {
                     try {
                         Search.findBySeatsNum(company.getCompany(), seats);
                     } catch (NoValueException e) {
-                        System.out.println("No such record.");
+                        System.out.println("No such seats number found.");
                     }
                     break;
 
@@ -81,7 +81,7 @@ public abstract class WorkWithArray {
                     try {
                         Search.findByTonnage(company.getCompany(), ton);
                     } catch (NoValueException e) {
-                        System.out.println("No such record.");
+                        System.out.println("No such tonnage found.");
                     }
                     break;
 
@@ -92,7 +92,7 @@ public abstract class WorkWithArray {
                     try {
                         Search.findByDistance(company.getCompany(), dis);
                     } catch (NoValueException e) {
-                        System.out.println("No such record.");
+                        System.out.println("No such distance number found.");
                     }
                     break;
 
@@ -104,7 +104,7 @@ public abstract class WorkWithArray {
                     try {
                         Search.findByProducer(company.getCompany(), prd);
                     } catch (NoValueException e) {
-                        System.out.println("No such record.");
+                        System.out.println("No such producer found.");
                     }
                     break;
                 case 6:
@@ -114,7 +114,7 @@ public abstract class WorkWithArray {
                     try {
                         Search.findByCountry(company.getCompany(), country);
                     } catch (NoValueException e) {
-                        System.out.println("No such record.");
+                        System.out.println("No such country record.");
                     }
                     break;
 
@@ -125,7 +125,7 @@ public abstract class WorkWithArray {
                     try {
                         Search.findByHeight(company.getCompany(), high);
                     } catch (NoValueException e) {
-                        System.out.println("No such record.");
+                        System.out.println("No such flight height record.");
                     }
                     break;
             }

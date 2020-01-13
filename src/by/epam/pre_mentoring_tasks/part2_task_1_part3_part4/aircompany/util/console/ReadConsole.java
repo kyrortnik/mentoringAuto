@@ -1,6 +1,6 @@
 package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.console;
 
-import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exceptions.NotValidDataTypeException;
+
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -14,7 +14,7 @@ public class ReadConsole {
         return str;
     }
 
-    public int readInt() throws InputMismatchException, NotValidDataTypeException {
+    public int readInt() throws InputMismatchException {
         int number = 0;
         try{
             Scanner sc = new Scanner(System.in);
@@ -31,7 +31,7 @@ public class ReadConsole {
     }
 
 
-    public boolean check(String str) throws  NotValidDataTypeException{
+    public boolean check(String str)  {
         boolean ch = false;
 
         try {

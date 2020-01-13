@@ -18,7 +18,7 @@ abstract class Search {
             if (pl.getTonnage()== tonnage){
                 System.out.println(pl.toString());
             }else{
-                throw new NoValueException("No values");
+                throw new NoValueException();
             }
         }
     }
@@ -31,7 +31,7 @@ abstract class Search {
             if (pl.getSeatsNum()== seats){
                 System.out.println(pl.toString());
             }else{
-                throw new NoValueException("No values");
+                throw new NoValueException();
             }
         }
     }
@@ -42,7 +42,7 @@ abstract class Search {
                 if (pl.getPlaneModel() == model){
                     System.out.println(pl.toString());
                 }else {
-                    throw new NoValueException("No values");
+                    throw new NoValueException();
                 }
             }
 
@@ -56,7 +56,7 @@ abstract class Search {
             if (pl.getFlightDistance() == flightDistance) {
                 System.out.println(pl.toString());
             }else{
-                throw new NoValueException("No values");
+                throw new NoValueException();
             }
         }
     }
@@ -69,7 +69,7 @@ abstract class Search {
             if (pl.getHeightOfFlight()== height){
                 System.out.println(pl.toString());
             }else{
-                throw new NoValueException("No values");
+                throw new NoValueException();
             }
         }
 
@@ -84,7 +84,7 @@ abstract class Search {
             if (producer.equals(pl.getProducer())){
                 System.out.println(pl.toString());
             }else{
-                throw new NoValueException("No values");
+                throw new NoValueException();
             }
         }
 
@@ -97,7 +97,7 @@ abstract class Search {
             if (country.equals(pl.getCountryOfOrigin())){
                 System.out.println(pl.toString());
             }else{
-                throw new NoValueException("No values");
+                throw new NoValueException();
             }
 
         }
