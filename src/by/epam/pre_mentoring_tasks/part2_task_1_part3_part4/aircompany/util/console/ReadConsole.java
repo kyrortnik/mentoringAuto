@@ -15,18 +15,17 @@ public class ReadConsole {
     }
 
     public int readInt() throws InputMismatchException, NotValidDataTypeException {
-        int number;
+        int number = 0;
         try{
-            //df
-
-        }catch (Exception e){
-
-        }
-        do{
             Scanner sc = new Scanner(System.in);
             number = sc.nextInt();
             return number;
-        }while (check(String.valueOf(number)));
+
+        }catch (InputMismatchException e){
+            System.out.println("Only integers");
+
+        }
+        return  number;
 
 
     }

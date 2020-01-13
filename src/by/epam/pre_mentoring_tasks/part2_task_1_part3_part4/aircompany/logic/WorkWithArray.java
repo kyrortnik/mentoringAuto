@@ -9,6 +9,7 @@ import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.json
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.work_withDB.DBconnection;
 
 import java.util.Comparator;
+import java.util.InputMismatchException;
 
 public abstract class WorkWithArray {
 
@@ -131,7 +132,7 @@ public abstract class WorkWithArray {
         }
     }
 
-    public static void addPlane(AirCompany company) throws NotValidDataTypeException {
+    public static void addPlane(AirCompany company) throws NotValidDataTypeException, InputMismatchException {
 
             Airplane plane = new Airplane();
 

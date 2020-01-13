@@ -2,6 +2,8 @@ package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.bean;
 
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.IFlying;
 
+import java.util.InputMismatchException;
+
 abstract class FlyingObject implements IFlying {
 
     boolean manMade; // true - man-made, false - natural flying object (birds,etc.)
@@ -31,6 +33,13 @@ abstract class FlyingObject implements IFlying {
     }
 
     public void setHeightOfFlight(int heightOfFlight) {
-        this.heightOfFlight = heightOfFlight;
+            String string = String.valueOf(heightOfFlight);
+            if (string.matches("\\d+")){
+                this.heightOfFlight = heightOfFlight;
+            }else{
+                throw new InputMismatchException("Only integers");
+            }
+
+
     }
 }
