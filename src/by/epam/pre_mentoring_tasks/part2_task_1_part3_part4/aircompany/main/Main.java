@@ -21,6 +21,7 @@ package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.main;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.bean.AirCompany;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.WorkWithArray;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.console.ReadConsole;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exceptions.LimitValueException;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exceptions.NoValueException;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exceptions.NotValidDataTypeException;
 
@@ -30,7 +31,7 @@ import java.util.InputMismatchException;
 
 
 public class Main {
-    public static void main(String[] args) throws InputMismatchException, NotValidDataTypeException, NoValueException {
+    public static void main(String[] args) throws InputMismatchException, NotValidDataTypeException, LimitValueException {
 
 
         AirCompany company = new AirCompany();

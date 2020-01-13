@@ -2,6 +2,7 @@ package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic;
 
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.bean.AirCompany;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.bean.Airplane;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exceptions.LimitValueException;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exceptions.NoValueException;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.console.ReadConsole;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exceptions.NotValidDataTypeException;
@@ -132,13 +133,18 @@ public abstract class WorkWithArray {
         }
     }
 
-    public static void addPlane(AirCompany company) throws NotValidDataTypeException, InputMismatchException {
+    public static void addPlane(AirCompany company) throws NotValidDataTypeException, InputMismatchException, LimitValueException {
 
             Airplane plane = new Airplane();
 
             System.out.println("Type plane model:");
             int mdl = console.readInt();
-            plane.setPlaneModel(mdl);
+            try{
+                plane.setPlaneModel(mdl);
+            }catch (LimitValueException e){
+                System.out.println("only  3 integers");
+            }
+
 
             System.out.println("Type plane tonnage:");
             int tonnage = console.readInt();

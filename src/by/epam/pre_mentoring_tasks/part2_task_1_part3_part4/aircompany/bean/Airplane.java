@@ -2,6 +2,7 @@ package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.bean;
 
 
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.IFlying;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exceptions.LimitValueException;
 
 import java.util.Objects;
 
@@ -35,8 +36,14 @@ public class Airplane  extends Aircraft implements Comparable<Airplane>, IFlying
         return planeModel;
     }
 
-    public void setPlaneModel(int planeModel) {
-        this.planeModel = planeModel;
+    public void setPlaneModel(int planeModel) throws LimitValueException {
+        String string = String.valueOf(planeModel);
+        if (string.matches("\\d\\d\\d")){
+            this.planeModel = planeModel;
+        }else {
+            throw new LimitValueException();
+        }
+
     }
 
     public int getSeatsNum() {
