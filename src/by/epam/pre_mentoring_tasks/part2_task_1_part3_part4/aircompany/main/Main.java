@@ -19,13 +19,9 @@ package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.main;
  * + JSON parsing
  */
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.bean.AirCompany;
-import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.WorkWithArrayList;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.WorkWithArray;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.console.ReadConsole;
-
-
-
-import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.WorkWithArrayList;
-import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.console.ReadConsole;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exceptions.NotValidDataTypeException;
 
 
 import java.util.InputMismatchException;
@@ -33,116 +29,64 @@ import java.util.InputMismatchException;
 
 
 public class Main {
-    public static void main(String[] args) throws InputMismatchException {
+    public static void main(String[] args) throws InputMismatchException, NotValidDataTypeException {
 
 
         AirCompany company = new AirCompany();
         ReadConsole console = new ReadConsole();
         boolean check;
 
+        System.out.println("                    Hello and Welcome!");
 
+        do {
+            System.out.println("============================================================== |");
+            System.out.println("What actions would you like to perform?");
+            System.out.println("1.View All Airplanes.");
+            System.out.println("2.Find a particular Airplane.");
+            System.out.println("3.Add an Airplane.");
+            System.out.println("4.Remove airplane.");
+            System.out.println("5.Show gross seats number.");
+            System.out.println("6.Show gross tonnage.");
+            System.out.println();
+            System.out.println("Type number of the action you would like to perform:");
+            System.out.println("============================================================== |");
 
-            System.out.println("                    Hello and Welcome!");
+            switch (console.readInt()) {
+                case 1:
+                    WorkWithArray.showAllPlanes(company);
+                    break;
 
-            do {
-                System.out.println("============================================================== |");
-                System.out.println("What actions would you like to perform?");
-                System.out.println("1.View All Airplanes.");
-                System.out.println("2.Find a particular Airplane.");
-                System.out.println("3.Add an Airplane.");
-                System.out.println("4.Remove airplane.");
-                System.out.println("5.Show gross seats number.");
-                System.out.println("6.Show gross tonnage.");
-                System.out.println();
-                System.out.println("Type number of the action you would like to perform:");
-                System.out.println("============================================================== |");
+                case 2:
+                    WorkWithArray.findPlane(company);
+                    break;
 
-                switch (console.readInt()) {
-                    case 1:
+                case 3:
+                    WorkWithArray.addPlane(company);
+                    break;
 
+                case 4:
+                    WorkWithArray.removePlane(company);
+                    break;
 
-                        WorkWithArrayList.showAllPlanes(company);
-                        break;
+                case 5:
+                    WorkWithArray.grossSeatNum(company);
+                    break;
 
-                    case 2:
-                        if (company.getCompany().isEmpty()){
-                            System.out.println("No airplane records yet.");
-                        }else{
+                case 6:
+                    WorkWithArray.grossTonnage(company);
+                    break;
 
-                            System.out.println("Type by which characteristics you would like to search for plane:");
-                            System.out.println("1. Plane Model");
-                            System.out.println("2.Number of seats");
-                            System.out.println("3.Tonnage");
-                            System.out.println("4.Flight Distance");
-                            System.out.println("5.Producer");
-                            System.out.println("6.Country of origin");
-                            System.out.println("7. Height of Flight");
-                            System.out.println("============================================================== |");
-                            System.out.println();
-                            System.out.println("Type the number of characteristics you would like to perform:");
-                            System.out.println("============================================================== |");
+                default:
+                    System.out.println("No such action. Please re-enter action number.");
+            }
+            System.out.println("Would you like to perform another action? Type Yes to do so. Type anything else to exit application.");
+            String s = console.readString();
 
-                            WorkWithArrayList.findPlane(console.readInt(),company);
-                        }
-
-                        break;
-
-                    case 3:
-
-                        WorkWithArrayList.addPlane(company);
-
-                        WorkWithArrayList.showAllPlanes(company);
-                        break;
-
-                    case 2:
-                        WorkWithArrayList.findPlane(company);
-                        break;
-
-                    case 3:
-                        WorkWithArrayList.addPlane(company);
-                        break;
-
-
-                        WorkWithArrayList.deletePlane(company);
-
-
-                    case 4:
-                        WorkWithArrayList.deletePlane(company);
-
-                        break;
-
-
-                        WorkWithArrayList.grossSeatNum(company);
-
-
-                    case 5:
-                        WorkWithArrayList.grossSeatNum(company);
-
-                        break;
-
-
-                        WorkWithArrayList.grossTonnage(company);
-
-
-                    case 6:
-                        WorkWithArrayList.grossTonnage(company);
-
-                        break;
-
-                    default:
-                        System.out.println("No such action. Please re-enter action number.");
-                }
-                System.out.println("Would you like to perform another action? Type Yes to do so. Type anything else to exit application.");
-                String s = console.readString();
-
-                check = s.equalsIgnoreCase("yes");
-            }while (check);
+            check = s.equalsIgnoreCase("yes");
+        }while (check);
 
     }
 
 
 }
-
-
-
 

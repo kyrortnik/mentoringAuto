@@ -1,10 +1,12 @@
 package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.bean;
 
 
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.IFlying;
+
 import java.util.Objects;
 
 
-public class Airplane  extends Aircraft implements Comparable<Airplane>{
+public class Airplane  extends Aircraft implements Comparable<Airplane>, IFlying {
 
     private int planeModel;
     private int seatsNum;
@@ -90,8 +92,8 @@ public class Airplane  extends Aircraft implements Comparable<Airplane>{
                 ", Number of Seats = " + seatsNum +
                 ", Tonnage = " + tonnage +
                 ", Flight Distance = " + flightDistance +
-                ", Producer = " + producer + '\'' +
-                ", Country off Origin = " + countryOfOrigin + '\'' +
+                ", Producer = " + producer  +
+                ", Country off Origin = " + countryOfOrigin +
                 ", Height of Flight = " + heightOfFlight ;
     }
 

@@ -2,6 +2,7 @@ package by.epam.pre_mentoring_tasks.part2_task2.main;
 
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.console.ReadConsole;
 import by.epam.pre_mentoring_tasks.part2_task2.bean.*;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exceptions.NotValidDataTypeException;
 
 import java.util.*;
 
@@ -16,7 +17,7 @@ import java.util.*;
  */
 
 public class MainClass {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NotValidDataTypeException {
 
         ReadConsole console = new ReadConsole();
         boolean check;

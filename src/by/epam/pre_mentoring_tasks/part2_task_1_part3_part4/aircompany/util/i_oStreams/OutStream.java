@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class InOutStreams {
+public class OutStream {
 
     FileReader in = null;
     FileWriter out = null;

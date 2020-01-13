@@ -12,7 +12,7 @@ abstract class Search {
 
 
 
-    public static void findByTonnage(ArrayList<Airplane> company, int tonnage) throws NoValueException {
+    static void findByTonnage(ArrayList<Airplane> company, int tonnage) throws NoValueException {
 
         for ( Airplane pl: company){
             if (pl.getTonnage()== tonnage){
@@ -25,7 +25,7 @@ abstract class Search {
 
 
 
-    public static void  findBySeatsNum(ArrayList<Airplane> company, int seats) throws NoValueException{
+     static void  findBySeatsNum(ArrayList<Airplane> company, int seats) throws NoValueException{
 
         for ( Airplane pl: company){
             if (pl.getSeatsNum()== seats){
@@ -50,7 +50,7 @@ abstract class Search {
     }
 
 
-    public static void findByDistance(ArrayList<Airplane> company, int flightDistance) throws NoValueException {
+     static void findByDistance(ArrayList<Airplane> company, int flightDistance) throws NoValueException {
 
         for ( Airplane pl: company) {
             if (pl.getFlightDistance() == flightDistance) {
@@ -63,7 +63,7 @@ abstract class Search {
 
 
 
-    public static void  findByHeight(ArrayList<Airplane> company, int height) throws NoValueException {
+     static void  findByHeight(ArrayList<Airplane> company, int height) throws NoValueException {
 
         for ( Airplane pl: company){
             if (pl.getHeightOfFlight()== height){
@@ -78,7 +78,7 @@ abstract class Search {
 
 
 
-    public static void findByProducer(ArrayList<Airplane> company, String producer) throws NoValueException{
+     static void findByProducer(ArrayList<Airplane> company, String producer) throws NoValueException{
 
         for ( Airplane pl: company){
             if (producer.equals(pl.getProducer())){
@@ -91,7 +91,7 @@ abstract class Search {
     }
 
 
-    public static void findByCountry(ArrayList<Airplane> company, String country) throws NoValueException{
+     static void findByCountry(ArrayList<Airplane> company, String country) throws NoValueException{
 
         for ( Airplane pl: company){
             if (country.equals(pl.getCountryOfOrigin())){
