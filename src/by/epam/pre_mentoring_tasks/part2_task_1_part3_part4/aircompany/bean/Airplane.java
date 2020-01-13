@@ -38,7 +38,7 @@ public class Airplane  extends Aircraft implements Comparable<Airplane>, IFlying
 
     public void setPlaneModel(int planeModel) throws LimitValueException {
         String string = String.valueOf(planeModel);
-        if (string.matches("\\d\\d\\d")){
+        if (string.matches("\\d\\d\\d") || string.matches("[0-9]{0,10}")){
             this.planeModel = planeModel;
         }else {
             throw new LimitValueException();
