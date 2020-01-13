@@ -10,8 +10,6 @@ import java.util.ArrayList;
 abstract class Search {
 
 
-
-
     static void findByTonnage(ArrayList<Airplane> company, int tonnage) throws NoValueException {
 
         for ( Airplane pl: company){
@@ -22,7 +20,6 @@ abstract class Search {
             }
         }
     }
-
 
 
      static void  findBySeatsNum(ArrayList<Airplane> company, int seats) throws NoValueException{
@@ -36,6 +33,7 @@ abstract class Search {
         }
     }
 
+
     static void findByModel(ArrayList<Airplane> company, int model) throws NoValueException {
 
             for ( Airplane pl: company){
@@ -45,8 +43,6 @@ abstract class Search {
                     throw new NoValueException();
                 }
             }
-
-
     }
 
 
@@ -62,7 +58,6 @@ abstract class Search {
     }
 
 
-
      static void  findByHeight(ArrayList<Airplane> company, int height) throws NoValueException {
 
         for ( Airplane pl: company){
@@ -74,8 +69,6 @@ abstract class Search {
         }
 
     }
-
-
 
 
      static void findByProducer(ArrayList<Airplane> company, String producer) throws NoValueException{

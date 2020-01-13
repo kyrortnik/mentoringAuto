@@ -15,7 +15,7 @@ public abstract class WorkWithArray {
 
     private static ReadConsole console = new ReadConsole();
 
-    public static void showAllPlanes(AirCompany company){
+    public static void showAllPlanes(AirCompany company) throws NoValueException {
 
         Comparator<Airplane> airplaneComparator = new Comparator<>() {
             @Override
@@ -26,16 +26,16 @@ public abstract class WorkWithArray {
 
             company.getCompany().sort(airplaneComparator);
             if (company.getCompany().isEmpty()){
-                System.out.println("No airplane records yet.");
+               throw  new NoValueException();
             }
             System.out.println(company.toString());
 
     }
 
 
-    public static void findPlane( AirCompany company) throws NotValidDataTypeException {
+    public static void findPlane( AirCompany company) throws NotValidDataTypeException, NoValueException {
         if (company.getCompany().isEmpty()){
-            System.out.println("No airplane records yet.");
+            throw  new NoValueException();
         }else {
             System.out.println("Type by which characteristics you would like to search for plane:");
             System.out.println("1. Plane Model");
@@ -175,7 +175,7 @@ public abstract class WorkWithArray {
     }
 
 
-    public static void removePlane(AirCompany company) throws NotValidDataTypeException {
+    public static void removePlane(AirCompany company) throws NotValidDataTypeException, NoValueException {
         if(!company.getCompany().isEmpty()){
             System.out.println("Type by which characteristics you would like to search for plane to remove:");
             System.out.println("1. Plane Model");
@@ -273,32 +273,41 @@ public abstract class WorkWithArray {
 
             }
         }else{
-            System.out.println("no airplane record yet.");
+            throw new NoValueException("no airplane record yet.");
         }
 
 
     }
 
-    public  static void grossSeatNum(AirCompany company){
-        int gross = 0;
-        for (int i = 0;i<company.getCompany().size();i++){
-            Airplane pl = company.getCompany().get(i);
-            int seat = pl.getSeatsNum();
-            gross = gross + seat;
+    public  static void grossSeatNum(AirCompany company) throws NoValueException {
+        if (!company.getCompany().isEmpty()){
+            int gross = 0;
+            for (int i = 0;i<company.getCompany().size();i++){
+                Airplane pl = company.getCompany().get(i);
+                int seat = pl.getSeatsNum();
+                gross = gross + seat;
+            }
+            System.out.println("Gross seats number: " + gross + " seats");
+        }else {
+            throw  new NoValueException();
         }
 
-        System.out.println("Gross seats number: " + gross + " seats");
     }
 
 
-    public static void  grossTonnage(AirCompany company){
-        int gross = 0;
-        for (int i = 0;i<company.getCompany().size();i++){
-            Airplane pl = company.getCompany().get(i);
-            int tonnage = pl.getTonnage();
-            gross = gross + tonnage;
+    public static void  grossTonnage(AirCompany company) throws NoValueException {
+        if (!company.getCompany().isEmpty()){
+            int gross = 0;
+            for (int i = 0;i<company.getCompany().size();i++){
+                Airplane pl = company.getCompany().get(i);
+                int tonnage = pl.getTonnage();
+                gross = gross + tonnage;
+            }
+            System.out.println("Gross seats tonnage: " + gross + " tonnage");
+        }else {
+            throw  new NoValueException();
         }
-        System.out.println("Gross seats tonnage: " + gross + " tonnage");
+
     }
 
 

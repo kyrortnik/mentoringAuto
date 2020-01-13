@@ -21,6 +21,7 @@ package by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.main;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.bean.AirCompany;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.logic.WorkWithArray;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.console.ReadConsole;
+import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exceptions.NoValueException;
 import by.epam.pre_mentoring_tasks.part2_task_1_part3_part4.aircompany.util.exceptions.NotValidDataTypeException;
 
 
@@ -29,12 +30,13 @@ import java.util.InputMismatchException;
 
 
 public class Main {
-    public static void main(String[] args) throws InputMismatchException, NotValidDataTypeException {
+    public static void main(String[] args) throws InputMismatchException, NotValidDataTypeException, NoValueException {
 
 
         AirCompany company = new AirCompany();
         ReadConsole console = new ReadConsole();
         boolean check;
+
 
         System.out.println("                    Hello and Welcome!");
 
@@ -51,13 +53,21 @@ public class Main {
             System.out.println("Type number of the action you would like to perform:");
             System.out.println("============================================================== |");
 
-            switch (console.readInt()) {
+            switch (console.readInt()){
                 case 1:
-                    WorkWithArray.showAllPlanes(company);
+                    try{
+                        WorkWithArray.showAllPlanes(company);
+                    }catch (NoValueException e){
+                        System.out.println("No airplane record yet.");
+                    }
                     break;
 
                 case 2:
-                    WorkWithArray.findPlane(company);
+                    try{
+                        WorkWithArray.findPlane(company);
+                    }catch (NoValueException e) {
+                        System.out.println("No airplane record yet.");
+                    }
                     break;
 
                 case 3:
@@ -65,15 +75,27 @@ public class Main {
                     break;
 
                 case 4:
-                    WorkWithArray.removePlane(company);
+                    try{
+                        WorkWithArray.removePlane(company);
+                    }catch (NoValueException e){
+                        System.out.println("No airplane record yet.");
+                    }
                     break;
 
                 case 5:
-                    WorkWithArray.grossSeatNum(company);
+                    try{
+                        WorkWithArray.grossSeatNum(company);
+                    }catch (NoValueException e){
+                        System.out.println("No airplane record yet.");
+                    }
                     break;
 
                 case 6:
-                    WorkWithArray.grossTonnage(company);
+                    try{
+                        WorkWithArray.grossTonnage(company);
+                    }catch (NoValueException e){
+                        System.out.println("No airplane record yet.");
+                    }
                     break;
 
                 default:
